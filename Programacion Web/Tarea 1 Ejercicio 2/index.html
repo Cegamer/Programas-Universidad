@@ -1,0 +1,149 @@
+<!--
+Ejercicio 2:
+
+Crear una Página de Lista de Productos
+
+Descripción: Crea una página HTML que actúe como una lista de productos para una tienda en línea. La página debe incluir una tabla con varios productos, incluyendo su nombre, precio y descripción. También debe incluir un encabezado y un párrafo introductorio.
+
+Requisitos:
+
+1.Utiliza las etiquetas <html>, <head>, <title>, <body>, <h1>, <p>, <table>, <tr>, <th>, <td>, y <a>.
+2.La página debe tener un título en la barra del navegador.
+3.Debe haber un encabezado principal (<h1>) con el nombre de la tienda.
+4.Incluye un párrafo (<p>) que introduzca la lista de productos.
+5.Crea una tabla (<table>) que liste al menos tres productos. Cada fila debe incluir el nombre del producto, el precio y una breve descripción.
+6.Incluye un enlace (<a>) al final del párrafo introductorio para más información sobre la tienda.
+
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tienda Anime</title>
+        <style type="text/css">
+
+            body, div {padding: 0; margin: 0;}
+            
+            .BannerInicial{  
+                height: 100vh;
+                width: 100vw;
+                border-bottom: 5px solid black;
+                padding: 0;
+                margin: 0;
+                overflow: hidden;
+            }
+
+            h1 {
+                color: white   ;
+                font-size: 5em;
+                text-shadow:  20PX white;
+                font-family: Arial, Helvetica, sans-serif;
+                margin: 0;
+            }
+
+            .ContenedorTexto{
+                backdrop-filter: blur(10px); /* apply the blur */
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                height: 100vh;
+                width: 100vw;
+                position: absolute;
+            }
+            .Fondo:before {
+                content:'';
+                position: absolute;
+                background-color: rgba(0,0,0,0.2);
+                height: 100vh;
+                width: 100vw;
+            }
+
+            .Fondo {
+                background-image: url("https://preview.redd.it/0wfn9tkqrd231.png?width=640&crop=smart&auto=webp&s=f329e79f36c6f7bd6ce66d409630ba8893fdbb5f");
+                background-color: black;
+                background-size: cover;
+                background-repeat: no-repeat;
+                position: absolute;
+                background-position: center;
+                height: 100vh;
+                width: 100vw;
+            }
+
+            
+        
+        </style>
+
+    </head>
+    <body>
+        <div class="BannerInicial"> 
+            <div class="Fondo"></div>
+            <div class="ContenedorTexto">
+                <h1>Bienvenido a Tienda Anime</h1>
+            </div>
+        </div>
+
+        <p>
+            Explora nuestra selección de productos de alta calidad. Tenemos algo para todos los gustos y necesidades. A continuación, encontrarás una lista de algunos de nuestros productos destacados. 
+            <a href="https://www.nuestratienda.com">Haz clic aquí para más información sobre nuestra tienda.</a>
+        </p>
+    
+        <table border="1" cellspacing="0" cellpadding="10">
+            <tr>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Botón Comprar</th>
+            </tr>
+            <tr>
+                <td><img src="https://example.com/naruto_figura.jpg" alt="Figura de Naruto" width="100"></td>
+                <td>Figura de Naruto</td>
+                <td>Figura de acción de Naruto Uzumaki con su traje clásico.</td>
+                <td>$29.99</td>
+                <td><button>Comprar</button></td>
+            </tr>
+            <tr>
+                <td><img src="https://example.com/goku_figura.jpg" alt="Figura de Goku" width="100"></td>
+                <td>Figura de Goku</td>
+                <td>Figura de acción de Goku en Super Saiyajin.</td>
+                <td>$34.99</td>
+                <td><button>Comprar</button></td>
+            </tr>
+            <tr>
+                <td><img src="https://example.com/sailormoon_peluche.jpg" alt="Peluche de Sailor Moon" width="100"></td>
+                <td>Peluche de Sailor Moon</td>
+                <td>Peluche suave de Sailor Moon en su traje de combate.</td>
+                <td>$19.99</td>
+                <td><button>Comprar</button></td>
+            </tr>
+            <tr>
+                <td><img src="https://example.com/onepiece_figura.jpg" alt="Figura de Luffy" width="100"></td>
+                <td>Figura de Luffy</td>
+                <td>Figura de acción de Monkey D. Luffy con su sombrero de paja.</td>
+                <td>$32.99</td>
+                <td><button>Comprar</button></td>
+            </tr>
+            <tr>
+                <td><img src="https://example.com/totoro_peluche.jpg" alt="Peluche de Totoro" width="100"></td>
+                <td>Peluche de Totoro</td>
+                <td>Peluche suave y grande de Totoro de la película Mi Vecino Totoro.</td>
+                <td>$24.99</td>
+                <td><button>Comprar</button></td>
+            </tr>
+            <tr>
+                <td><img src="https://example.com/attackontitan_poster.jpg" alt="Póster de Attack on Titan" width="100"></td>
+                <td>Póster de Attack on Titan</td>
+                <td>Póster de alta calidad con los personajes de Attack on Titan.</td>
+                <td>$9.99</td>
+                <td><button>Comprar</button></td>
+            </tr>
+            <tr>
+                <td><img src="https://example.com/dbz_camiseta.jpg" alt="Camiseta Dragon Ball Z" width="100"></td>
+                <td>Camiseta Dragon Ball Z</td>
+                <td>Camiseta con diseño de Goku y Vegeta en Dragon Ball Z.</td>
+                <td>$14.99</td>
+                <td><button>Comprar</button></td>
+            </tr>
+        </table>
+    </body>
+</html>
