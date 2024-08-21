@@ -21,9 +21,7 @@ Requisitos:
     <head>
         <title>Tienda Anime</title>
         <style type="text/css">
-
-            body, div {padding: 0; margin: 0;}
-            
+            body, div {padding: 0; margin: 0;}     
             .BannerInicial{  
                 height: 100vh;
                 width: 100vw;
@@ -69,10 +67,73 @@ Requisitos:
                 width: 100vw;
             }
 
-            
-        
-        </style>
+            p {
+                padding:  2vh   15vw 2vh 15vw;
+                font-family: Arial, Helvetica, sans-serif;
+                
+            }
 
+            .ContenedorTabla {
+                justify-content: center;
+                display: flex;
+            }
+            body{
+                background-color: rgb(248, 239, 227);
+            }
+        
+            table {
+                width: 80%;
+                margin: 2vh auto;
+                border-collapse: collapse;
+                background-color: #f9f9f9;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            th, td {
+                text-align: left;
+                padding: 12px;
+            }
+
+            th {
+                background-color: #333;
+                color: white;
+                font-family: 'Arial', sans-serif;
+                font-weight: bold;
+                text-align: center; 
+                vertical-align: middle; 
+            }
+
+            td {
+                border-bottom: 1px solid #ddd;
+                font-family: 'Arial', sans-serif;
+                text-align: center; 
+                vertical-align: middle; 
+            }
+
+            tr:hover {
+                background-color: #f1f1f1;
+            }
+
+            img {
+                border-radius: 10px;
+                width: 8vw;
+                height: 8vw;
+            }
+
+            button {
+                padding: 10px 15px;
+                background-color: #ff4500;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-family: 'Arial', sans-serif;
+            }
+
+            button:hover {
+                background-color: #e03e00;
+            }
+        </style>
     </head>
     <body>
         <div class="BannerInicial"> 
@@ -87,6 +148,7 @@ Requisitos:
             <a href="https://www.nuestratienda.com">Haz clic aquí para más información sobre nuestra tienda.</a>
         </p>
     
+        <div class="ContenedorTabla">
         <table border="1" cellspacing="0" cellpadding="10">
             <tr>
                 <th>Imagen</th>
@@ -96,54 +158,55 @@ Requisitos:
                 <th>Botón Comprar</th>
             </tr>
             <tr>
-                <td><img src="https://example.com/naruto_figura.jpg" alt="Figura de Naruto" width="100"></td>
+                <td><img src="https://down-co.img.susercontent.com/file/293d7423183fe9db430c9b75768be4be" alt="Figura de Naruto" width="100"></td>
                 <td>Figura de Naruto</td>
                 <td>Figura de acción de Naruto Uzumaki con su traje clásico.</td>
                 <td>$29.99</td>
                 <td><button>Comprar</button></td>
             </tr>
             <tr>
-                <td><img src="https://example.com/goku_figura.jpg" alt="Figura de Goku" width="100"></td>
+                <td><img src="https://http2.mlstatic.com/D_NQ_NP_859614-MCO74370277455_022024-O.webp" alt="Figura de Goku" width="100"></td>
                 <td>Figura de Goku</td>
                 <td>Figura de acción de Goku en Super Saiyajin.</td>
                 <td>$34.99</td>
                 <td><button>Comprar</button></td>
             </tr>
             <tr>
-                <td><img src="https://example.com/sailormoon_peluche.jpg" alt="Peluche de Sailor Moon" width="100"></td>
-                <td>Peluche de Sailor Moon</td>
-                <td>Peluche suave de Sailor Moon en su traje de combate.</td>
+                <td><img src="https://http2.mlstatic.com/D_NQ_NP_769400-CBT49781992546_042022-O.webp" alt="Death Note" width="100"></td>
+                <td>Death Note</td>
+                <td>Cuaderno Death Note</td>
                 <td>$19.99</td>
                 <td><button>Comprar</button></td>
             </tr>
             <tr>
-                <td><img src="https://example.com/onepiece_figura.jpg" alt="Figura de Luffy" width="100"></td>
+                <td><img src="https://http2.mlstatic.com/D_NQ_NP_662450-MCO46306675865_062021-O.webp" alt="Figura de Luffy" width="100"></td>
                 <td>Figura de Luffy</td>
                 <td>Figura de acción de Monkey D. Luffy con su sombrero de paja.</td>
-                <td>$32.99</td>
+                <td>$70.99</td>
                 <td><button>Comprar</button></td>
             </tr>
             <tr>
-                <td><img src="https://example.com/totoro_peluche.jpg" alt="Peluche de Totoro" width="100"></td>
-                <td>Peluche de Totoro</td>
-                <td>Peluche suave y grande de Totoro de la película Mi Vecino Totoro.</td>
-                <td>$24.99</td>
+                <td><img src="https://store.ign.com/cdn/shop/files/Jojos-Bizarre-Adventure-Jotaro-Kujo-Ver_1_5-3rd-run-Chozokado-Action-Figure-2.jpg?v=1712040857&width=1445" alt="Figura de Jotaro" width="100"></td>
+                <td>Figura de acción Jotaro</td>
+                <td>Figura de Jotaro versión Stardust Crusader</td>
+                <td>$60.99</td>
                 <td><button>Comprar</button></td>
             </tr>
             <tr>
-                <td><img src="https://example.com/attackontitan_poster.jpg" alt="Póster de Attack on Titan" width="100"></td>
-                <td>Póster de Attack on Titan</td>
-                <td>Póster de alta calidad con los personajes de Attack on Titan.</td>
-                <td>$9.99</td>
+                <td><img src="https://http2.mlstatic.com/D_NQ_NP_603232-MCO51348152893_082022-O.webp" alt="Figura de Attack on Titan" width="100"></td>
+                <td>Figura de Attack on Titan</td>
+                <td>Figura de Eren transformado en el titán de ataque</td>
+                <td>$90.99</td>
                 <td><button>Comprar</button></td>
             </tr>
             <tr>
-                <td><img src="https://example.com/dbz_camiseta.jpg" alt="Camiseta Dragon Ball Z" width="100"></td>
+                <td><img src="https://www.mandragorastore.com/wp-content/uploads/2023/05/Dragon-Ball-Super-Goku-y-Vegeta-Dioses-men.jpg" alt="Camiseta Dragon Ball Z" width="100"></td>
                 <td>Camiseta Dragon Ball Z</td>
                 <td>Camiseta con diseño de Goku y Vegeta en Dragon Ball Z.</td>
                 <td>$14.99</td>
                 <td><button>Comprar</button></td>
             </tr>
         </table>
+    </div>
     </body>
 </html>

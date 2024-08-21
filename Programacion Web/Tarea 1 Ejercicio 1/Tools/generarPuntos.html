@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="toolStyle.css">
+    </style>
+
+</head>
+<body>
+
+    <h1>Generador de Puntos en base a un dibujo</h1>
+    <p id="descripcionCorta">Esta herramienta sirve para obtener una matriz de puntos teniendo como base un dibujo hecho con líneas</p>
+
+
+    <div class="toolContainer">
+        <canvas id="myCanvas" width="600" height="600"
+        style="border: 3px solid red;"
+        ></canvas>
+        <div class="controlButtons">
+            <!--<button onclick="deshacer()">Ctrl + z</button>-->
+            <button onclick="regresarPunto()">Regresar punto</button>
+            <button onclick="exportarPuntos()">Exportar Puntos</button>
+            <button onclick="terminarTrazo()">Finalizar Trazo</button>
+            <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" >
+
+        </div>
+
+    </div>
+    <div id="out">
+    <h2>Salida</h2>
+    <textarea id="salida" readonly>0</textarea>
+</div>
+    <div>
+        <h2>¿Cómo usar?</h2>
+        <ol>
+            <li>Suba una imagen (opcional)<div></div></li>
+            <li>Haga click en la imagen para generar un punto<div></div></li><li>Haga click nuevamente para generar otro punto<div></div></li>
+            <li>automaticamente se generará una linea de un punto a otro<div></div></li>
+            <li>Dibuje tantos puntos como quiera<div></div></li>
+            <li>Cuando haya terminado, haga click en Exportar puntos<div></div></li>
+        </ol>
+    </div>
+    <div>
+        <h2>¿Cómo mostrar en Python con matplotlib?</h2>
+        <p>La función para mostrar esto en python es la que se muestra en la siguiente imagen</p>
+        <p>Recibe como parámetro dibujo, que corresponde a la matriz genrada por esta herramienta</p>
+        <p>Y color, que es el color con el que será dibujado este trazo</p>
+        <img src="tuto1.png">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
