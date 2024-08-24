@@ -30,13 +30,12 @@
     <section id="proyectos">
         <h2>Proyectos</h2>
 
-         <!-- Sección de Proyectos Destacados -->
          <section>
             <h1>Proyectos Destacados</h1>
+            Aqui se muestran los proyectos destacados que he realizado o que están en curso
         
             <article>
                 <figure>
-                    <img src="./images/resisafe.png" alt="Captura de Proyecto 1" width="600" height="400">
                     <figcaption>
                         <h2> Resisafe</h2>
                         <details>
@@ -50,12 +49,12 @@
                     </details>
 
                     </figcaption>
+                    <img src="./images/resisafe.png" alt="Captura de Proyecto 1" height="300">  
                 </figure>
             </article>
         
             <article>
                 <figure>
-                    <img src="proyecto2.jpg" alt="Captura de Proyecto 2" width="600" height="400">
                     <figcaption>
                         <h2>Underflower</h2>
 
@@ -69,12 +68,13 @@
                     </details>
 
                     </figcaption>
+                    <img src="./images/underflower.png" alt="Captura de Proyecto 2" height="300">
+
                 </figure>
             </article>
         
             <article>
                 <figure>
-                    <img src="proyecto3.jpg" alt="Captura de Proyecto 3" width="600" height="400">
                     <figcaption>
                         <h2>Monitor Master</h2>
                         <details>
@@ -83,6 +83,8 @@
                             Monitor Master es una herramienta de software destinada a mejorar la productividad al monitorear y gestionar el tiempo de uso de aplicaciones específicas en el ordenador. Esta aplicación permite a los usuarios establecer límites de tiempo para diferentes programas, así como bloquear aplicaciones que puedan ser una distracción durante el trabajo.
                         </details>
                     </figcaption>
+                    <img src="./images/monitormaster.png" alt="Captura de Proyecto 3"  height="300">
+
                 </figure>
             </article>
         </section>
@@ -160,7 +162,6 @@
 
 
 
-     <!-- Sección de Gráfico Interactivo en Canvas -->
      <section>
         <h2>Progreso en Áreas de Conocimiento</h2>
         <canvas id="progressCanvas" width="600" height="400"></canvas>
@@ -171,18 +172,16 @@
         </details>
     </section>
 
-    <!-- Código JavaScript embebido para la creación y actualización del gráfico -->
     <script>
-        // Obtén el contexto del canvas
         const canvas = document.getElementById('progressCanvas');
         const ctx = canvas.getContext('2d');
 
         // Datos del gráfico
         const skills = [
-            { name: 'HTML', value: 90 },
-            { name: 'CSS', value: 80 },
-            { name: 'JavaScript', value: 70 },
-            { name: 'Python', value: 60 }
+            { name: 'Desarrollo Frontend', value: 50 },
+            { name: 'Desarrollo Backend', value: 80 },
+            { name: 'Desarrollo movil', value: 40 },
+            { name: 'Bases de datos', value: 30 }
         ];
 
         // Configuración del gráfico
@@ -194,7 +193,6 @@
         const barColor = 'lightblue';
         const textColor = 'black';
 
-        // Función para dibujar el gráfico
         function drawChart() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -203,11 +201,9 @@
                 const x = chartLeft + index * (barWidth + barSpacing);
                 const y = canvas.height - chartTop - barHeight;
 
-                // Dibujar la barra
                 ctx.fillStyle = barColor;
                 ctx.fillRect(x, y, barWidth, barHeight);
 
-                // Dibujar el texto
                 ctx.fillStyle = textColor;
                 ctx.font = '14px Arial';
                 ctx.textAlign = 'center';
@@ -216,7 +212,6 @@
             });
         }
 
-        // Llama a la función para dibujar el gráfico
         drawChart();
     </script>
 

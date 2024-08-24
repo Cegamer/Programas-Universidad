@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conferencia Internacional de Tecnología</title>
+  
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <div class="header-container">
+        <h1>Bienvenidos a la Conferencia Internacional de Tecnología</h1>
+        <video controls autoplay muted>
+            <source src="promo_video.mp4" type="video/mp4">
+            Tu navegador no soporta la reproducción de videos.
+        </video>
+    </div>
+
+    <!-- Navegación -->
+    <div class="nav-container">
+        <a href="#about">Acerca de</a>
+        <a href="#speakers">Ponentes</a>
+        <a href="#schedule">Programa</a>
+        <a href="#register">Registro</a>
+    </div>
+
+    <!-- Sección principal -->
+    <div class="section-container">
+        <h2>Cuenta Regresiva para el Evento</h2>
+        <div class="countdown">
+            <time datetime="2024-12-01T09:00">01 de Diciembre, 2024</time>
+            <progress value="75" max="100"></progress>
+            <aside>Solo faltan <meter min="0" max="100" value="75">75</meter> días para el evento.</aside>
+        </div>
+
+        <div class="progress-info">
+            <label for="attendees">Asistentes Confirmados:</label>
+            <meter id="attendees" value="1500" min="0" max="2000">1500</meter>
+        </div>
+    </div>
+
+    <!-- Sección de Ponentes -->
+
+    <!-- Sección de Ponentes -->
+    <div id="speakers" class="section-container">
+        <h2>Conoce a los Ponentes</h2>
+
+        <!-- Ponente 1 -->
+        <article>
+            <figure>
+                <img src="ponente1.jpg" alt="Foto de Ponente 1" width="200">
+                <figcaption>Dr. Ana López - Experta en Inteligencia Artificial</figcaption>
+            </figure>
+            <blockquote>
+                "La inteligencia artificial está revolucionando el mundo. Estoy emocionada de compartir mis investigaciones en este campo."
+                <footer>- Dr. Ana López</footer>
+            </blockquote>
+        </article>
+
+        <!-- Ponente 2 -->
+        <article>
+            <figure>
+                <img src="ponente2.jpg" alt="Foto de Ponente 2" width="200">
+                <figcaption>Ing. Juan Pérez - Especialista en Blockchain</figcaption>
+            </figure>
+            <blockquote>
+                "El blockchain tiene el potencial de transformar industrias enteras. Espero discutir cómo esta tecnología está cambiando el panorama."
+                <footer>- Ing. Juan Pérez</footer>
+            </blockquote>
+        </article>
+
+        <!-- Gráfico SVG de áreas de especialización -->
+        <section>
+            <h3>Áreas de Especialización de los Ponentes</h3>
+            <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+                <!-- Ejemplo de gráfico SVG: un gráfico de barras simple -->
+                <rect x="10" y="20" width="50" height="150" fill="blue"/>
+                <rect x="70" y="40" width="50" height="130" fill="green"/>
+                <rect x="130" y="60" width="50" height="110" fill="red"/>
+                <text x="10" y="190" fill="black">IA</text>
+                <text x="70" y="190" fill="black">Blockchain</text>
+                <text x="130" y="190" fill="black">Seguridad</text>
+            </svg>
+        </section>
+
+        <!-- Mapa interactivo -->
+        <section>
+            <h3>Ubicación de la Conferencia</h3>
+            <canvas id="map" width="300" height="200" style="border:1px solid #000000;"></canvas>
+            <p>Nota: El mapa interactivo está representado aquí con un canvas vacío. La interacción se puede agregar con JavaScript.</p>
+        </section>
+
+    </div>
+
+
+
+    <!-- Sección del Programa -->
+    <div id="schedule" class="section-container">
+        <h2>Programa de Actividades</h2>
+
+        <!-- Detalles del Programa -->
+        <details>
+            <summary>01 de Diciembre, 2024</summary>
+            <ul>
+                <li>
+                    <time datetime="2024-12-01T09:00">09:00 - 10:00</time> 
+                    <p>Sesión de Apertura</p>
+                </li>
+                <li>
+                    <time datetime="2024-12-01T10:15">10:15 - 11:15</time> 
+                    <p>Taller de Inteligencia Artificial</p>
+                </li>
+                <li>
+                    <time datetime="2024-12-01T11:30">11:30 - 12:30</time> 
+                    <p>Panel de Discusión: Futuro del Blockchain</p>
+                </li>
+            </ul>
+        </details>
+
+        <details>
+            <summary>02 de Diciembre, 2024</summary>
+            <ul>
+                <li>
+                    <time datetime="2024-12-02T09:00">09:00 - 10:00</time> 
+                    <p>Sesión de Apertura del Segundo Día</p>
+                </li>
+                <li>
+                    <time datetime="2024-12-02T10:15">10:15 - 11:15</time> 
+                    <p>Workshop sobre Seguridad en la Nube</p>
+                </li>
+                <li>
+                    <time datetime="2024-12-02T11:30">11:30 - 12:30</time> 
+                    <p>Presentación de Nuevas Tecnologías</p>
+                </li>
+            </ul>
+        </details>
+
+        <!-- Formulario de Inscripción -->
+        <section>
+            <h3>Inscríbete en las Actividades</h3>
+            <form>
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="activity">Actividad de Interés:</label>
+                <select id="activity" name="activity">
+                    <option value="ai">Taller de Inteligencia Artificial</option>
+                    <option value="blockchain">Panel de Discusión: Futuro del Blockchain</option>
+                    <option value="cloud">Workshop sobre Seguridad en la Nube</option>
+                </select>
+
+                <label for="comments">Comentarios:</label>
+                <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+
+                <button type="submit">Enviar Inscripción</button>
+            </form>
+        </section>
+
+        <!-- Progreso de Inscripción -->
+        <section>
+            <h3>Progreso de Inscripción en Actividades</h3>
+            <p>Inscripciones completadas:</p>
+            <progress value="25" max="100">25%</progress>
+        </section>
+        
+    </div>
+
+
+ 
+    <!-- Página de Registro -->
+    <div id="register" class="section-container">
+        <h2>Formulario de Registro</h2>
+
+        <form>
+            <!-- Nombre Completo -->
+            <label for="fullname">Nombre Completo:</label>
+            <input type="text" id="fullname" name="fullname" required>
+
+            <!-- Correo Electrónico -->
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <!-- Teléfono -->
+            <label for="phone">Teléfono:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <!-- País -->
+            <label for="country">País:</label>
+            <input list="countries" id="country" name="country" required>
+            <datalist id="countries">
+                <option value="Argentina">
+                <option value="Chile">
+                <option value="Colombia">
+                <option value="México">
+                <option value="Perú">
+            </datalist>
+
+            <!-- Fecha de Nacimiento -->
+            <label for="dob">Fecha de Nacimiento:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <!-- Género -->
+            <fieldset>
+                <legend>Género:</legend>
+                <label for="male">Masculino</label>
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="female">Femenino</label>
+                <input type="radio" id="female" name="gender" value="female" required>
+                <label for="other">Otro</label>
+                <input type="radio" id="other" name="gender" value="other">
+            </fieldset>
+
+            <!-- Preferencias Alimentarias -->
+            <label for="diet">Preferencias Alimentarias:</label>
+            <input type="text" id="diet" name="diet" placeholder="Ej. Vegetariano, Sin gluten">
+
+            <!-- Aceptación de Términos -->
+            <label>
+                <input type="checkbox" id="terms" name="terms" required>
+                <abbr title="Términos y Condiciones">Acepto los <mark>términos y condiciones</mark></abbr>.
+            </label>
+
+            <!-- Salida de Mensaje -->
+            <p>Los datos que ingreses serán procesados para completar tu registro.</p>
+
+            <!-- Botón de Envío -->
+            <button type="submit">Enviar Registro</button>
+        </form>
+
+        <!-- Mensaje de Confirmación (No funcional sin JavaScript) -->
+        <section>
+            <h3>Confirmación de Registro</h3>
+            <output for="fullname email phone dob" id="confirmationMessage">
+                <!-- El mensaje de confirmación se mostraría aquí si se pudiera usar JavaScript -->
+            </output>
+        </section>
+
+    </div>
+
+    <!-- Pie de página -->
+    <div class="container">
+        <p>&copy; 2024 Conferencia Internacional de Tecnología. Todos los derechos reservados.</p>
+    </div>
+
+</body>
+</html>

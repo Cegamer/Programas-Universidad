@@ -1,0 +1,212 @@
+<!--
+Ejercicio 2:
+
+Crear una Página de Lista de Productos
+
+Descripción: Crea una página HTML que actúe como una lista de productos para una tienda en línea. La página debe incluir una tabla con varios productos, incluyendo su nombre, precio y descripción. También debe incluir un encabezado y un párrafo introductorio.
+
+Requisitos:
+
+1.Utiliza las etiquetas <html>, <head>, <title>, <body>, <h1>, <p>, <table>, <tr>, <th>, <td>, y <a>.
+2.La página debe tener un título en la barra del navegador.
+3.Debe haber un encabezado principal (<h1>) con el nombre de la tienda.
+4.Incluye un párrafo (<p>) que introduzca la lista de productos.
+5.Crea una tabla (<table>) que liste al menos tres productos. Cada fila debe incluir el nombre del producto, el precio y una breve descripción.
+6.Incluye un enlace (<a>) al final del párrafo introductorio para más información sobre la tienda.
+
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tienda Anime</title>
+        <style type="text/css">
+            body, div {padding: 0; margin: 0;}     
+            .BannerInicial{  
+                height: 100vh;
+                width: 100vw;
+                border-bottom: 5px solid black;
+                padding: 0;
+                margin: 0;
+                overflow: hidden;
+            }
+
+            h1 {
+                color: white   ;
+                font-size: 5em;
+                text-shadow:  20PX white;
+                font-family: Arial, Helvetica, sans-serif;
+                margin: 0;
+            }
+
+            .ContenedorTexto{
+                backdrop-filter: blur(10px); /* apply the blur */
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                height: 100vh;
+                width: 100vw;
+                position: absolute;
+            }
+            .Fondo:before {
+                content:'';
+                position: absolute;
+                background-color: rgba(0,0,0,0.2);
+                height: 100vh;
+                width: 100vw;
+            }
+
+            .Fondo {
+                background-image: url("https://preview.redd.it/0wfn9tkqrd231.png?width=640&crop=smart&auto=webp&s=f329e79f36c6f7bd6ce66d409630ba8893fdbb5f");
+                background-color: black;
+                background-size: cover;
+                background-repeat: no-repeat;
+                position: absolute;
+                background-position: center;
+                height: 100vh;
+                width: 100vw;
+            }
+
+            p {
+                padding:  2vh   15vw 2vh 15vw;
+                font-family: Arial, Helvetica, sans-serif;
+                
+            }
+
+            .ContenedorTabla {
+                justify-content: center;
+                display: flex;
+            }
+            body{
+                background-color: rgb(248, 239, 227);
+            }
+        
+            table {
+                width: 80%;
+                margin: 2vh auto;
+                border-collapse: collapse;
+                background-color: #f9f9f9;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            th, td {
+                text-align: left;
+                padding: 12px;
+            }
+
+            th {
+                background-color: #333;
+                color: white;
+                font-family: 'Arial', sans-serif;
+                font-weight: bold;
+                text-align: center; 
+                vertical-align: middle; 
+            }
+
+            td {
+                border-bottom: 1px solid #ddd;
+                font-family: 'Arial', sans-serif;
+                text-align: center; 
+                vertical-align: middle; 
+            }
+
+            tr:hover {
+                background-color: #f1f1f1;
+            }
+
+            img {
+                border-radius: 10px;
+                width: 8vw;
+                height: 8vw;
+            }
+
+            button {
+                padding: 10px 15px;
+                background-color: #ff4500;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-family: 'Arial', sans-serif;
+            }
+
+            button:hover {
+                background-color: #e03e00;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="BannerInicial"> 
+            <div class="Fondo"></div>
+            <div class="ContenedorTexto">
+                <h1>Bienvenido a Tienda Anime</h1>
+            </div>
+        </div>
+
+        <p>
+            Explora nuestra selección de productos de alta calidad. Tenemos algo para todos los gustos y necesidades. A continuación, encontrarás una lista de algunos de nuestros productos destacados. 
+            <a href="https://www.nuestratienda.com">Haz clic aquí para más información sobre nuestra tienda.</a>
+        </p>
+    
+        <div class="ContenedorTabla">
+        <table border="1" cellspacing="0" cellpadding="10">
+            <tr>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Botón Comprar</th>
+            </tr>
+            <tr>
+                <td><img src="https://down-co.img.susercontent.com/file/293d7423183fe9db430c9b75768be4be" alt="Figura de Naruto" width="100"></td>
+                <td>Figura de Naruto</td>
+                <td>Figura de acción de Naruto Uzumaki con su traje clásico.</td>
+                <td>$29.99</td>
+                <td><button>Comprar</button></td>
+            </tr>
+            <tr>
+                <td><img src="https://http2.mlstatic.com/D_NQ_NP_859614-MCO74370277455_022024-O.webp" alt="Figura de Goku" width="100"></td>
+                <td>Figura de Goku</td>
+                <td>Figura de acción de Goku en Super Saiyajin.</td>
+                <td>$34.99</td>
+                <td><button>Comprar</button></td>
+            </tr>
+            <tr>
+                <td><img src="https://http2.mlstatic.com/D_NQ_NP_769400-CBT49781992546_042022-O.webp" alt="Death Note" width="100"></td>
+                <td>Death Note</td>
+                <td>Cuaderno Death Note</td>
+                <td>$19.99</td>
+                <td><button>Comprar</button></td>
+            </tr>
+            <tr>
+                <td><img src="https://http2.mlstatic.com/D_NQ_NP_662450-MCO46306675865_062021-O.webp" alt="Figura de Luffy" width="100"></td>
+                <td>Figura de Luffy</td>
+                <td>Figura de acción de Monkey D. Luffy con su sombrero de paja.</td>
+                <td>$70.99</td>
+                <td><button>Comprar</button></td>
+            </tr>
+            <tr>
+                <td><img src="https://store.ign.com/cdn/shop/files/Jojos-Bizarre-Adventure-Jotaro-Kujo-Ver_1_5-3rd-run-Chozokado-Action-Figure-2.jpg?v=1712040857&width=1445" alt="Figura de Jotaro" width="100"></td>
+                <td>Figura de acción Jotaro</td>
+                <td>Figura de Jotaro versión Stardust Crusader</td>
+                <td>$60.99</td>
+                <td><button>Comprar</button></td>
+            </tr>
+            <tr>
+                <td><img src="https://http2.mlstatic.com/D_NQ_NP_603232-MCO51348152893_082022-O.webp" alt="Figura de Attack on Titan" width="100"></td>
+                <td>Figura de Attack on Titan</td>
+                <td>Figura de Eren transformado en el titán de ataque</td>
+                <td>$90.99</td>
+                <td><button>Comprar</button></td>
+            </tr>
+            <tr>
+                <td><img src="https://www.mandragorastore.com/wp-content/uploads/2023/05/Dragon-Ball-Super-Goku-y-Vegeta-Dioses-men.jpg" alt="Camiseta Dragon Ball Z" width="100"></td>
+                <td>Camiseta Dragon Ball Z</td>
+                <td>Camiseta con diseño de Goku y Vegeta en Dragon Ball Z.</td>
+                <td>$14.99</td>
+                <td><button>Comprar</button></td>
+            </tr>
+        </table>
+    </div>
+    </body>
+</html>
