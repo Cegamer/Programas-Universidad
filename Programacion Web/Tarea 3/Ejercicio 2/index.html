@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>E-Commerce de Productos Electrónicos</title>
+</head>
+
+<body>
+
+    <main>
+        <!-- Encabezado principal -->
+        <header >
+            <h1>Tienda de Productos Electrónicos</h1>
+            <p>Bienvenido a Tech Haven, tu destino único para descubrir lo último en tecnología. En nuestra tienda en línea, ofrecemos una amplia gama de productos electrónicos de alta calidad, desde los auriculares más avanzados hasta los smartphones y laptops más innovadores. Nuestro compromiso es proporcionarte una experiencia de compra excepcional, con productos cuidadosamente seleccionados para satisfacer todas tus necesidades tecnológicas. Explora nuestras categorías, encuentra ofertas exclusivas y disfruta de un servicio al cliente dedicado que está siempre a tu disposición. ¡Haz de Tech Haven tu primera elección para todas tus necesidades electrónicas!
+
+            </p>
+        </header>
+        <table  bgcolor="#fcccc1">
+            <tr>
+                <td>
+                    <section>
+                        <h2>Lista de Productos</h2>
+                        <table border="1" cellspacing="0" cellpadding="10">
+                            <tr>
+                                <th>Producto</th>
+                                <th>Imagen</th>
+                                <th>Precio</th>
+                                <th>Disponibilidad</th>
+                                <th>Descripción</th>
+                            </tr>
+                            <tr>
+                                <td>Auriculares Bose QuietComfort 35 II</td>
+                                <td>
+                                    <figure>
+                                        <img width="200px"
+                                            src="data:image/jpeg;base64,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"
+                                            alt="Auriculares Bose QuietComfort 35 II">
+                                        <figcaption>Auriculares inalámbricos con cancelación de ruido.</figcaption>
+                                    </figure>
+                                </td>
+                                <td>$299</td>
+                                <td>En Stock</td>
+                                <td>Cancelación de ruido líder en la industria.</td>
+                            </tr>
+                            <tr>
+                                <td>Smartphone Samsung Galaxy S21</td>
+                                <td>
+                                    <figure>
+                                        <img width="200px"
+                                            src="https://exitocol.vtexassets.com/arquivos/ids/19488387/celular-samsung-galaxy-s21-5g-128-gb-phantom-gray-refurbi-reacondicionado.jpg?v=638276454813530000"
+                                            alt="Samsung Galaxy S21">
+                                        <figcaption>Smartphone con pantalla AMOLED de 6.2".</figcaption>
+                                    </figure>
+                                </td>
+                                <td>$799</td>
+                                <td>En Stock</td>
+                                <td>Pantalla dinámica y rendimiento potente.</td>
+                            </tr>
+                            <tr>
+                                <td>Tablet Apple iPad Pro 11"</td>
+                                <td>
+                                    <figure>
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-lLIjuNM9OrVBX9Pc4kDlEm_OQcli_j85_Q&s"
+                                            width="200px" alt="Apple iPad Pro 11">
+                                        <figcaption>Tablet con pantalla Liquid Retina.</figcaption>
+                                    </figure>
+                                </td>
+                                <td>$999</td>
+                                <td>Agotado</td>
+                                <td>La mejor tablet para profesionales creativos.</td>
+                            </tr>
+                            <tr>
+                                <td>Reloj Inteligente Apple Watch Series 6</td>
+                                <td>
+                                    <figure>
+                                        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_733580-MLA72063241888_102023-T.webp"
+                                            width="200px" alt="Apple Watch Series 6">
+                                        <figcaption>Reloj inteligente con monitoreo de oxígeno en sangre.</figcaption>
+                                    </figure>
+                                </td>
+                                <td>$399</td>
+                                <td>En Stock</td>
+                                <td>Monitorea tu salud en tiempo real.</td>
+                            </tr>
+                            <tr>
+                                <td>Portátil Dell XPS 13</td>
+                                <td>
+                                    <figure>
+                                        <img src="https://bucaramanga.solutekla.com/photo/1/dell/portatiles/producto_nuevo_xps_13_9380133_fhd_1920_x_1080_infinityedge_display8th_generation_intel_core_i58265u_processor_6m_cache_up_to_39_ghz_4_cores_intelr_uhd_graphics_620windows_10_pro_64bit_spanish52whr_4c8gb_lpddr3_2133mhzkiller_1435_80211ac_2x2_wifi_and_bluetooth_41256gb_m2_pcie_nvme_solid_state_drivekiller_1435_80211ac_2x2_wifi_and_bluetooth_411_year_premium_support__1_year_complete/producto_nuevo_xps_13_9380133_fhd_1920_x_1080_infinityedge_display8th_generation_intel_core_i58265u_processor_6m_cache_up_to_39_ghz_4_cores_intelr_uhd_graphics_620windows_10_pro_64bit_spanish52whr_4c8gb_lpddr3_2133mhzkiller_1435_80211ac_2x2_wifi_and_bluetooth_41256gb_m2_pcie_nvme_solid_state_drivekiller_1435_80211ac_2x2_wifi_and_bluetooth_411_year_premium_support__1_year_complete_0001"
+                                            width="200px" alt="Dell XPS 13">
+                                        <figcaption>Portátil ultraligero con pantalla InfinityEdge.</figcaption>
+                                    </figure>
+                                </td>
+                                <td>$1,199</td>
+                                <td>Pocas Unidades</td>
+                                <td>Rendimiento superior en un diseño compacto.</td>
+                            </tr>
+                            <tr>
+                                <td>Cámara Sony Alpha a7 III</td>
+                                <td>
+                                    <figure>
+                                        <img src="https://importacionesarturia.com/wp-content/uploads/2019/08/Sony-a7III-con-lente-.jpg"
+                                            width="200px" alt="Sony Alpha a7 III">
+                                        <figcaption>Cámara mirrorless con sensor full-frame.</figcaption>
+                                    </figure>
+                                </td>
+                                <td>$1,999</td>
+                                <td>En Stock</td>
+                                <td>Excelente calidad de imagen y versatilidad.</td>
+                            </tr>
+                        </table>
+
+                    </section>
+                </td>
+                <td>
+
+                    <!-- Filtros y Búsqueda -->
+                    <section>
+                        <h2>Buscar Productos</h2>
+                        <form>
+                            <label for="categoria">Categoría:</label>
+                            <input list="categorias" id="categoria" name="categoria"
+                                placeholder="Selecciona una categoría">
+                            <datalist id="categorias">
+                                <option value="Auriculares">
+                                <option value="Smartphones">
+                                <option value="Tablets">
+                                <option value="Relojes Inteligentes">
+                                <option value="Portátiles">
+                                <option value="Cámaras">
+                            </datalist>
+
+                            <label for="precio">Precio:</label>
+                            <input type="range" id="precio" name="precio" min="100" max="2000" step="100" value="500">
+                            <output for="precio" id="precioOutput">$500</output>
+
+                            <button type="submit">Buscar</button>
+                        </form>
+                    </section>
+
+                    <!-- Sección del Carrito de Compras -->
+                    <section>
+                        <h2>Carrito de Compras</h2>
+                        <form>
+                            <!-- Lista de Productos en el Carrito -->
+                            <fieldset>
+                                <legend>Productos en el Carrito</legend>
+                                <table>
+                                    <tr>
+                                        <th>Producto</th>
+                                        <th>Cantidad</th>
+                                        <th>Precio Unitario</th>
+                                        <th>Total</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Auriculares Bose QuietComfort 35 II</td>
+                                        <td>
+                                            <input type="number" name="cantidad1" value="1" min="1">
+                                        </td>
+                                        <td>$299</td>
+                                        <td>
+                                            <output name="total1">$299</output>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Smartphone Samsung Galaxy S21</td>
+                                        <td>
+                                            <input type="number" name="cantidad2" value="1" min="1">
+                                        </td>
+                                        <td>$799</td>
+                                        <td>
+                                            <output name="total2">$799</output>
+                                        </td>
+                                    </tr>
+                                    <!-- Agrega más filas según sea necesario -->
+                                </table>
+                            </fieldset>
+
+                            <!-- Medidor de Progreso -->
+                            <fieldset>
+                                <legend>Progreso del Carrito</legend>
+                                <label for="progreso">Avance hacia descuento o envío gratuito:</label>
+                                <progress id="progreso" value="50" max="100"></progress>
+                                <p>50% completado para descuento o envío gratuito.</p>
+                            </fieldset>
+
+                            <!-- Fechas de Entrega Estimadas -->
+                            <fieldset>
+                                <legend>Fechas de Entrega Estimadas</legend>
+                                <p>Fecha estimada de entrega:</p>
+                                <time datetime="2024-08-30">30 de agosto de 2024</time>
+                                <p>Fecha estimada de envío:</p>
+                                <time datetime="2024-08-25">25 de agosto de 2024</time>
+                            </fieldset>
+
+                            <!-- Total del Carrito -->
+                            <fieldset>
+                                <legend>Total del Carrito</legend>
+                                <label for="totalCarrito">Total:</label>
+                                <output id="totalCarrito">$1,098</output>
+                            </fieldset>
+
+                            <!-- Botón de Enviar -->
+                            <button type="submit">Finalizar Compra</button>
+                        </form>
+
+                        <!-- Gráficos de Precios y Tendencias de Ventas -->
+                        <section>
+                            <h2>Comparativa de Precios</h2>
+                            <svg width="500" height="300" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Ejes -->
+                                <line x1="50" y1="250" x2="450" y2="250" stroke="black" />
+                                <line x1="50" y1="250" x2="50" y2="50" stroke="black" />
+
+                                <!-- Barras de Precios -->
+                                <rect x="75" y="200" width="50" height="50" fill="blue" />
+                                <text x="100" y="195" font-size="12" text-anchor="middle">$299</text>
+                                <rect x="150" y="150" width="50" height="100" fill="green" />
+                                <text x="175" y="145" font-size="12" text-anchor="middle">$799</text>
+                                <rect x="225" y="100" width="50" height="150" fill="red" />
+                                <text x="250" y="95" font-size="12" text-anchor="middle">$999</text>
+                                <rect x="300" y="200" width="50" height="50" fill="purple" />
+                                <text x="325" y="195" font-size="12" text-anchor="middle">$399</text>
+                                <rect x="375" y="50" width="50" height="200" fill="orange" />
+                                <text x="400" y="45" font-size="12" text-anchor="middle">$1,199</text>
+                            </svg>
+                        </section>
+                        <section>
+                            <h2>Tendencias de Ventas</h2>
+                            <canvas id="ventasCanvas" width="500" height="300"></canvas>
+                            <script>
+                                const canvas = document.getElementById('ventasCanvas');
+                                const ctx = canvas.getContext('2d');
+
+                                // Eje X
+                                ctx.moveTo(50, 250);
+                                ctx.lineTo(450, 250);
+                                ctx.stroke();
+
+                                // Eje Y
+                                ctx.moveTo(50, 250);
+                                ctx.lineTo(50, 50);
+                                ctx.stroke();
+
+                                // Gráfico de línea simple para tendencias de ventas
+                                ctx.beginPath();
+                                ctx.moveTo(50, 200); // Punto inicial
+                                ctx.lineTo(100, 150); // Punto medio
+                                ctx.lineTo(150, 175); // Punto medio
+                                ctx.lineTo(200, 125); // Punto medio
+                                ctx.lineTo(250, 100); // Punto final
+                                ctx.strokeStyle = 'blue';
+                                ctx.stroke();
+
+                                // Etiquetas de datos
+                                ctx.fillText("Ene", 100, 260);
+                                ctx.fillText("Feb", 150, 260);
+                                ctx.fillText("Mar", 200, 260);
+                                ctx.fillText("Abr", 250, 260);
+                            </script>
+                        </section>
+
+                        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                    </section>
+                </td>
+            </tr>
+        </table>
+
+        <section>
+            <h2>Reseñas y Testimonios</h2>
+
+            <!-- Reseñas de Productos -->
+            <article>
+                <h3>Reseñas de Clientes</h3>
+
+                <blockquote>
+                    <p>"Los <mark>auriculares</mark> Bose QuietComfort 35 II superaron todas mis expectativas. La <abbr
+                            title="Cancelación de Ruido Activa">ANC</abbr> es excelente, y la calidad del sonido es
+                        inmejorable."</p>
+                    <footer>
+                        <cite>– Juan Pérez, <time datetime="2024-08-20">20 de agosto de 2024</time></cite>
+                    </footer>
+                </blockquote>
+
+                <blockquote>
+                    <p>"El <mark>Samsung Galaxy S21</mark> ofrece un rendimiento impresionante. La pantalla AMOLED es
+                        vibrante y la cámara toma fotos de alta calidad."</p>
+                    <footer>
+                        <cite>– Ana Gómez, <time datetime="2024-08-18">18 de agosto de 2024</time></cite>
+                    </footer>
+                </blockquote>
+
+                <blockquote>
+                    <p>"La <mark>Apple iPad Pro</mark> es perfecta para mi trabajo creativo. La pantalla Liquid Retina y
+                        el rendimiento son fantásticos, aunque me gustaría que fuera un poco más asequible."</p>
+                    <footer>
+                        <cite>– Carlos Rodríguez, <time datetime="2024-08-15">15 de agosto de 2024</time></cite>
+                    </footer>
+                </blockquote>
+            </article>
+
+            <!-- Formulario para Publicar Reseñas -->
+            <article>
+                <h3>Deja tu Reseña</h3>
+                <form>
+                    <label for="nombre">Nombre:</label><br>
+                    <input type="text" id="nombre" name="nombre" required><br>
+
+                    <label for="producto">Producto:</label><br>
+                    <input type="text" id="producto" name="producto" required><br>
+
+                    <label for="reseña">Tu Reseña:</label><br>
+                    <textarea id="reseña" name="reseña" rows="4" required></textarea><br>
+
+                    <button type="submit">Enviar Reseña</button>
+                </form>
+            </article>
+        </section>
+
+
+        <section>
+            <h2>Contacto</h2>
+             <!-- Formulario de Contacto -->
+             <article>
+                <h3>Envíanos un Mensaje</h3>
+                <form>
+                    <label for="nombre">Nombre:</label><br>
+                    <input type="text" id="nombre" name="nombre" required><br>
+        
+                    <label for="email">Correo Electrónico:</label><br>
+                    <input type="email" id="email" name="email" required><br>
+        
+                    <label for="asunto">Asunto:</label><br>
+                    <select id="asunto" name="asunto" required>
+                        <option value="" disabled selected>Selecciona un asunto</option>
+                        <option value="consulta">Consulta</option>
+                        <option value="soporte">Soporte</option>
+                        <option value="sugerencia">Sugerencia</option>
+                        <option value="otro">Otro</option>
+                    </select><br>
+        
+                    <label for="mensaje">Mensaje:</label><br>
+                    <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br>
+        
+                    <button type="submit">Enviar</button>
+                </form>
+            </article>
+        
+            <!-- Mapa Interactivo de las Tiendas Físicas -->
+            <article>
+                <h3>Nuestras Tiendas</h3>
+                <svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Mapa de fondo -->
+                    <rect width="100%" height="100%" fill="#e0e0e0" />
+        
+                    <!-- Ubicaciones de las tiendas -->
+                    <circle cx="100" cy="100" r="10" fill="red" />
+                    <text x="115" y="105" font-size="12">Tienda A</text>
+        
+                    <circle cx="300" cy="200" r="10" fill="blue" />
+                    <text x="315" y="205" font-size="12">Tienda B</text>
+        
+                    <circle cx="500" cy="300" r="10" fill="green" />
+                    <text x="515" y="305" font-size="12">Tienda C</text>
+                </svg>
+            </article>
+        
+           
+        </section>
+        
+
+        <!-- Pie de página -->
+        <footer>
+            <p>&copy; 2024 Tienda de Productos Electrónicos</p>
+        </footer>
+
+    </main>
+
+</body>
+
+</html>

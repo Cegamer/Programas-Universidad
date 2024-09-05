@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio de Aplicación Web</title>
+    <link rel="stylesheet" href="./Styles/styles.css">
+</head>
+
+<body>
+
+    <section>
+        <div class="hero">
+            <div class="hero-blur">
+                <div class="hero-content">
+                    <h1>Bienvenido a <b>Resisafe</b></h1>
+                    <p>Plataforma de Gestión para conjuntos Residenciales</p>
+                    <a href="#contact" class="cta-button">Contáctanos</a>
+                    <a href="#features" class="cta-button-2">Características</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Sección Sobre Nosotros -->
+    <section id="about" class="about">
+        <div class="about-content">
+            <h2>Sobre Nosotros</h2>
+            <p>
+                En <b>Resisafe</b>, nuestro objetivo es ofrecer una plataforma integral de gestión para conjuntos
+                residenciales que simplifique y mejore la administración diaria. Fundada por un equipo comprometido con
+                la tecnología y el diseño, nos esforzamos por brindar una experiencia excepcional y soluciones eficaces
+                para las necesidades residenciales.
+            </p>
+            <p>
+                Nuestro equipo se enfoca en la excelencia y la innovación continua, adaptándose a los desafíos del
+                entorno residencial. Con un fuerte compromiso con la calidad y la satisfacción del cliente, nos
+                enorgullecemos de ofrecer herramientas y servicios que realmente optimizan la gestión y seguridad en tu
+                conjunto residencial.
+            </p>
+
+
+        </div>
+    </section>
+
+
+
+    <h2 class="featuresTitle" id="features">Características</h2>
+
+    <!-- Sección de Características -->
+    <section  class="features">
+        <div class="feature">
+            <img src="./Images/administrador.png" alt="Característica 1">
+            <h3>Administración Residencial</h3>
+            <p>La gestión integral de las zonas comunes incluye la administración y mantenimiento de áreas compartidas,
+                la coordinación de reservas para instalaciones, y la gestión de la información y necesidades de los
+                residentes. También abarca el manejo de la paquetería, la actualización de información relevante sobre
+                el conjunto y la recepción, seguimiento y resolución de quejas y reclamos.</p>
+        </div>
+        <div class="feature">
+            <img src="./Images/seguridad.png" alt="Característica 2">
+            <h3>Seguridad Residencial</h3>
+            <p>La gestión integral de las zonas comunes abarca la administración y mantenimiento de áreas compartidas,
+                la coordinación de reservas para instalaciones y el registro de visitantes, así como la consulta de su
+                historial. También incluye la gestión y distribución de paquetería, con la capacidad de consultar el
+                historial de paquetes, junto con la actualización de información relevante sobre el conjunto y la
+                recepción, seguimiento y resolución de quejas y reclamos de los residentes.</p>
+        </div>
+        <div class="feature">
+            <img src="./Images/residentes.png" alt="Característica 3">
+            <h3>Residentes</h3>
+            <p>La gestión integral de las zonas comunes incluye la administración y mantenimiento de áreas compartidas,
+                la reserva de instalaciones comunes y el registro de visitantes. Además, abarca la consulta del
+                historial de paquetería, el manejo de quejas y reclamos de los residentes, y la actualización de
+                información relevante sobre el conjunto.
+            </p>
+        </div>
+    </section>
+
+    <!-- Sección de Testimonios -->
+    <h2 class="testimonialsTitle" >Testimonios</h2>
+    <section class="testimonials">
+        <div class="testimonial-slider">
+            <div class="testimonial">
+                <p>"Esta aplicación ha cambiado mi forma de realizar las reservas en mi conjunto. Muy recomendado!"</p>
+                <h4>- Jose Alejandro Perez</h4>
+            </div>
+            <div class="testimonial">
+                <p>"Una herramienta bastante util para la consulta de las visitas residenciales. Sencilla de usar y
+                    efectiva."</p>
+                <h4>- Maria Antonieta Gonzales</h4>
+            </div>
+            <div class="testimonial">
+                <p>"Excelente servicio al manejo de quejas y reclamos."</p>
+                <h4>- Julian Alexander Pierre</h4>
+            </div>
+        </div>
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </section>
+
+    <!-- Sección de Footer -->
+    <footer class="contact-footer" id="contact">
+        <div class="footer-content">
+            <h2>Contacto</h2>
+            <form action="#" method="post">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit" class="submit-button">Enviar</button>
+            </form>
+        </div>
+    </footer>
+
+
+</body>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.testimonial');
+
+    function changeSlide(direction)
+    {
+        currentSlide += direction;
+
+        if (currentSlide < 0)
+        {
+            currentSlide = slides.length - 1;
+        } else if (currentSlide >= slides.length)
+        {
+            currentSlide = 0;
+        }
+
+        const slider = document.querySelector('.testimonial-slider');
+        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,258 @@
+/* Estilos globales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Sección de Héroe */
+.hero {
+    height: 100vh;
+    background-image: url('../Images/Fachada_Coral_Web_.webp');
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.hero b{
+    color: rgb(1, 221, 255);
+}
+
+.hero-blur{
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.cta-button-2{
+    background-color:  rgb(81, 237, 81);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button-2:hover{
+    background-color:  rgb(42, 143, 42);
+}
+
+.hero-content {
+    max-width: 50%;
+    background: rgba(0, 0, 0, 0.25); /* Fondo semi-transparente */
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+.cta-button {
+    background-color: rgb(1, 221, 255);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: rgb(3, 89, 194);
+}
+
+
+/* Sección Sobre Nosotros */
+.about {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about .cta-button {
+    background-color: #ff5733;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.about .cta-button:hover {
+    background-color: #c70039;
+}
+
+
+
+/* Sección de Características */
+
+.featuresTitle{
+    background-color: #f4f4f4;
+    margin: 0;
+    text-align: center;
+    font-size: 2.5rem;
+    padding-top: 20px;
+}
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 50px;
+    background-color: #f4f4f4;
+}
+
+.feature {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+}
+
+.feature img {
+    width: 150px;
+    margin-bottom: 15px;
+}
+
+/* Sección de Testimonios */
+
+.testimonialsTitle{
+    background-color: #333;
+    margin: 0;
+    font-size: 2.5rem;
+    color: white;
+    text-align: center;
+    padding-top: 50px;
+}
+.testimonials {
+    background-color: #333;
+    color: white;
+    padding: 50px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.testimonial {
+    min-width: 100%;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+
+
+/* Sección de Footer */
+.contact-footer {
+    background-color: #1e1e1e;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.footer-content form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-content label {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.footer-content input,
+.footer-content textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.footer-content textarea {
+    resize: vertical;
+}
+
+.submit-button {
+    background-color: rgb(1, 221, 255);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: rgb(3, 89, 194);
+}
