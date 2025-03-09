@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@capacitor/camera": "^7.0.0",
+    "@capacitor/filesystem": "^7.0.0",
+    "@capacitor/preferences": "^7.0.0"
+  }
+}
