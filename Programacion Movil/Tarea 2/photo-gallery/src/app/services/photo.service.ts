@@ -1,153 +1,129 @@
-import { Injectable } from '@angular/core';
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
-import { Filesystem, Directory } from '@capacitor/filesystem';
-import { Preferences } from '@capacitor/preferences';
-import { Platform } from '@ionic/angular';
-import { Capacitor } from '@capacitor/core';
+import { Injectable } from '@angular/core';
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, addDoc, getDocs, query, where, orderBy, deleteDoc, doc } from 'firebase/firestore';
+
+// 🔥 Configuración de Firebase (asegúrate de usar tu propia configuración)
+const firebaseConfig = {
+  apiKey: "AIzaSyATa_U8bJyQja2lbN__UTAJrqeGrWm_VbI",
+  authDomain: "galeria-f9db8.firebaseapp.com",
+  projectId: "galeria-f9db8",
+  storageBucket: "galeria-f9db8.firebasestorage.app",
+  messagingSenderId: "934954748424",
+  appId: "1:934954748424:web:d11942d3e216c433bd5fbd"
+};
+
+// Inicializar Firebase y Firestore
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class PhotoService
-{
+export class PhotoService {
   public photos: UserPhoto[] = [];
-  private PHOTO_STORAGE: string = 'photos';
-  private platform: Platform;
 
-  constructor(platform: Platform)
-  {
-    this.platform = platform;
-  }
-  public async deletePicture(photo: UserPhoto, position: number) {
-    // Remove this photo from the Photos reference data array
-    this.photos.splice(position, 1);
-  
-    // Update photos array cache by overwriting the existing photo array
-    Preferences.set({
-      key: this.PHOTO_STORAGE,
-      value: JSON.stringify(this.photos)
-    });
-  
-    // delete photo file from filesystem
-    const filename = photo.filepath
-                        .substr(photo.filepath.lastIndexOf('/') + 1);
-  
-    await Filesystem.deleteFile({
-      path: filename,
-      directory: Directory.Data
-    });
-  }
-
-  public async loadSaved() {
-    // Retrieve cached photo array data
-    const { value } = await Preferences.get({ key: this.PHOTO_STORAGE });
-    this.photos = (value ? JSON.parse(value) : []) as UserPhoto[];
-  
-    // Easiest way to detect when running on the web:
-    // “when the platform is NOT hybrid, do this”
-    if (!this.platform.is('hybrid')) {
-      // Display the photo by reading into base64 format
-      for (let photo of this.photos) {
-        // Read each saved photo's data from the Filesystem
-        const readFile = await Filesystem.readFile({
-            path: photo.filepath,
-            directory: Directory.Data
-        });
-  
-        // Web platform only: Load the photo as base64 data
-        photo.webviewPath = `data:image/jpeg;base64,${readFile.data}`;
-      }
-    }
-  }
-
-  public async addNewToGallery()
-  {
-    Preferences.set({
-      key: this.PHOTO_STORAGE,
-      value: JSON.stringify(this.photos),
-    });
-
-    // Take a photo
-    const capturedPhoto = await Camera.getPhoto({
-      resultType: CameraResultType.Uri, // file-based data; provides best performance
-      source: CameraSource.Camera, // automatically take a new photo with the camera
-      quality: 100 // highest quality (0 to 100)
-    });
-
-    // Save the picture and add it to photo collection
-    const savedImageFile = await this.savePicture(capturedPhoto);
-    this.photos.unshift(savedImageFile);
-  }
-  // Save picture to file on device
-  private async savePicture(photo: Photo)
-  {
-    // Convert photo to base64 format, required by Filesystem API to save
-    const base64Data = await this.readAsBase64(photo);
-
-    // Write the file to the data directory
-    const fileName = Date.now() + '.jpeg';
-    const savedFile = await Filesystem.writeFile({
-      path: fileName,
-      data: base64Data,
-      directory: Directory.Data
-    });
-
-    if (this.platform.is('hybrid'))
-    {
-      // Display the new image by rewriting the 'file://' path to HTTP
-      // Details: https://ionicframework.com/docs/building/webview#file-protocol
-      return {
-        filepath: savedFile.uri,
-        webviewPath: Capacitor.convertFileSrc(savedFile.uri),
-      };
-    }
-    else
-    {
-      // Use webPath to display the new image instead of base64 since it's
-      // already loaded into memory
-      return {
-        filepath: fileName,
-        webviewPath: photo.webPath
-      };
-    }
-  }
-  private async readAsBase64(photo: Photo)
-  {
-    // "hybrid" will detect Cordova or Capacitor
-    if (this.platform.is('hybrid'))
-    {
-      // Read the file into base64 format
-      const file = await Filesystem.readFile({
-        path: photo.path!
+  /** 📷 Tomar una nueva foto y subirla a Firestore */
+  public async addNewToGallery() {
+    try {
+      const capturedPhoto = await Camera.getPhoto({
+        resultType: CameraResultType.Uri,
+        source: CameraSource.Camera,
+        quality: 100,
       });
 
-      return file.data;
-    }
-    else
-    {
-      // Fetch the photo, read as a blob, then convert to base64 format
-      const response = await fetch(photo.webPath!);
-      const blob = await response.blob();
+      const savedImageFile = await this.uploadToFirestore(capturedPhoto);
 
-      return await this.convertBlobToBase64(blob) as string;
+      if (savedImageFile) {
+        this.photos.unshift(savedImageFile);
+        console.log('✅ Foto guardada correctamente en Firestore:', savedImageFile);
+      } else {
+        console.error('❌ No se pudo guardar la imagen en Firestore.');
+      }
+    } catch (error) {
+      console.error('❌ Error al capturar la foto:', error);
     }
   }
 
-  private convertBlobToBase64 = (blob: Blob) => new Promise((resolve, reject) =>
-  {
-    const reader = new FileReader();
-    reader.onerror = reject;
-    reader.onload = () =>
-    {
-      resolve(reader.result);
-    };
-    reader.readAsDataURL(blob);
-  });
+  /** 🔄 Subir la imagen a Firestore */
+  private async uploadToFirestore(photo: Photo): Promise<UserPhoto | null> {
+    try {
+      const fileName = `${Date.now()}.jpeg`;
 
+      // Convertir imagen a Base64
+      if (!photo.webPath) {
+        throw new Error('No se encontró la ruta de la imagen.');
+      }
+
+      const response = await fetch(photo.webPath);
+      const blob = await response.blob();
+      const base64Data = (await this.convertBlobToBase64(blob)) as string;
+
+      // Crear objeto para guardar en Firestore
+      const photoData: UserPhoto = {
+        filepath: fileName,
+        webviewPath: base64Data,
+        timestamp: Date.now(),
+      };
+
+      // Guardar en Firestore
+      await addDoc(collection(db, 'photos'), photoData);
+
+      return photoData;
+    } catch (error) {
+      console.error('❌ Error subiendo la foto a Firestore:', error);
+      return null;
+    }
+  }
+
+  /** 🗑️ Eliminar foto de Firestore */
+  public async deletePicture(photo: UserPhoto, position: number) {
+    try {
+      // Elimina la foto de la lista local
+      this.photos.splice(position, 1);
+
+      // Buscar la referencia en Firestore
+      const q = query(collection(db, 'photos'), where('filepath', '==', photo.filepath));
+      const querySnapshot = await getDocs(q);
+
+      // Eliminar la foto en Firestore
+      querySnapshot.forEach(async (docSnap) => {
+        await deleteDoc(doc(db, 'photos', docSnap.id));
+      });
+
+      console.log('✅ Foto eliminada correctamente de Firestore');
+    } catch (error) {
+      console.error('❌ Error eliminando la foto:', error);
+    }
+  }
+
+  /** 🔄 Convertir Blob a Base64 */
+  private convertBlobToBase64(blob: Blob): Promise<string> {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onerror = () => reject('Error al convertir Blob a Base64');
+      reader.onloadend = () => resolve(reader.result as string);
+      reader.readAsDataURL(blob);
+    });
+  }
+
+  /** 📥 Cargar imágenes guardadas desde Firestore */
+  public async loadSaved() {
+    try {
+      const q = query(collection(db, 'photos'), orderBy('timestamp', 'desc'));
+      const querySnapshot = await getDocs(q);
+
+      this.photos = querySnapshot.docs.map((docSnap) => docSnap.data() as UserPhoto);
+      console.log('📸 Fotos cargadas desde Firestore:', this.photos);
+    } catch (error) {
+      console.error('❌ Error al cargar las fotos desde Firestore:', error);
+    }
+  }
 }
 
-export interface UserPhoto
-{
+/** 📂 Interfaz para las fotos */
+export interface UserPhoto {
   filepath: string;
   webviewPath?: string;
+  timestamp: number;
 }
