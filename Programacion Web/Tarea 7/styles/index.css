@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,900;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+body{
+    background-color: #001A2C;
+    color: #f8f9fa;
+}
+nav, .navbar-brand:visited, .nav-link {
+    background-color: #00253E;
+    color: #f8f9fa;
+    font-family: "Roboto", sans-serif;
+     font-weight: 700;
+    font-style: italic;
+}
+
+.navbar-brand:hover, .nav-link:hover, .navbar-brand:active, .nav-link:active {
+    color: #4caf50;
+}
+
+.navbar-toggler{
+    background-color: #caf0f8;
+    color: #f8f9fa;
+}
+
+#welcome{
+    background: url('https://cdn.prod.website-files.com/5f7f90ecc4aec0e36886a9af/62f58bb13419b9e5a32082f7_dot-pattern.svg') no-repeat center center;
+    background-size: cover; 
+    height: 100vh;
+}
+#welcome h1{
+    font-size: 3rem;
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+
+}
+#welcome .btn{
+    background-color: #4caf50;
+    color: #f8f9fa;
+    font-size: x-large;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+}
+#welcome .btn:hover{
+    background-color: #00253E;
+    color: #f8f9fa;
+}
+#welcome .btn:active{
+    background-color: #5ea4bc;
+    color: #f8f9fa;
+}

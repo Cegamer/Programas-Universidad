@@ -1,0 +1,279 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('/resources/productos-medicos.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    filter: blur(8px);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.about-us {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: 50px auto;
+    text-align: center;
+    color: #3c4b64;
+}
+
+h2 {
+    color: #2a3e59;
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #4a5f7e;
+}
+
+strong {
+    color: #2a82da;
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .about-us {
+        padding: 30px 15px;
+    }
+
+    h2 {
+        font-size: 2.2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+.products {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f0f8ff;
+}
+
+.products h2 {
+    color: #2a3e59;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.product-list {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.product-item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    max-width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-10px);
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product-item h3 {
+    color: #2a82da;
+    font-size: 1.5rem;
+    margin-top: 15px;
+}
+
+.product-item p {
+    color: #4a5f7e;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #2a82da;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-top: 40px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #1f6bb5;
+}
+
+@media (max-width: 768px) {
+    .product-list {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .product-item {
+        max-width: 100%;
+    }
+}
+
+#promotions-slider {
+    background-color: #f8f9fa;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.carousel-caption h5 {
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-caption p {
+    font-size: 1.2rem;
+}
+
+.carousel-caption .btn {
+    background-color: #4caf50;
+    border: none;
+}
+
+.carousel-item {
+    max-height: 40vh;
+}
+
+#testimonials {
+    background-color: #3c4b64;
+    color: white;
+}
+
+#testimonials h2 {
+    color: #4caf50;
+    margin-bottom: 40px;
+}
+
+.testimonials-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.testimonial {
+    text-align: center;
+    margin-bottom: 30px;
+    max-width: 300px;
+}
+
+.testimonial-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.testimonial h4 {
+    color: #4caf50;
+    margin-bottom: 15px;
+}
+
+.testimonial p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .testimonials-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .testimonial {
+        margin-bottom: 20px;
+    }
+}
+
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1000;
+}
+
+.whatsapp-icon {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.whatsapp-float:hover {
+    background-color: #128c7e;
+}

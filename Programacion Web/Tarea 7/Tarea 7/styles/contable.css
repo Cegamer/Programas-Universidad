@@ -1,0 +1,69 @@
+body{margin: 0; padding: 0;}
+
+.seccionGraficas {
+    display: flex;
+    width: 100%;
+    height: 50vh;
+    padding: 2em;
+    margin: 2em;
+}
+
+.seccionGraficas canvas{
+
+
+    height: 50vh;
+}
+
+
+.graficoActivo {
+    display: block;
+}
+
+.graficoInactivo {
+    display: none;
+}
+
+
+
+/*  Estilos Header */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #3c4b64; 
+    color: white; 
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo img {
+    height: 50px; 
+    margin-right: 10px;
+  }
+
+  .user-info {
+    display: flex;
+    align-items: center;
+  }
+
+  .user-info span {
+    margin-right: 20px; 
+  }
+
+  .logout-button {
+    padding: 5px 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .logout-button:hover {
+    background-color: #45a049; 
+  }

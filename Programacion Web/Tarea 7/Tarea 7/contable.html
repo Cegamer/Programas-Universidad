@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="./styles/contable.css" />
+  </head>
+  <body>
+    <header>
+        <div class="logo">
+          <img src="logo.png" alt="Logo de la Página"> 
+          <h1>Nombre de la Página</h1>
+        </div>
+        <div class="user-info">
+          <span id="usernameSpan">Usuario Logueado</span> 
+          <button class="logout-button" onclick="cerrarSesion()">Cerrar Sesión</button>
+        </div>
+      </header>
+    <section class="seccionGraficas">
+      <div class="balanceGeneralContainer">
+        <div style="width: 100%; margin: auto">
+          <canvas id="myPieChart"></canvas>
+        </div>
+        <h4>Balance General</h4>
+        <p>$0000000</p>
+      </div>
+
+      <div class="resultadosContainer">
+        <select id="grafico" name="grafico">
+          <option value="ResumenResultados">Resumen de Resultados</option>
+          <option value="DetalleResultados">Detalle de Resultados</option>
+        </select>
+
+        <div id="ResumenResultados" class="graficoActivo">
+          <h4>Resumen de resultados</h4>
+          <div style="width: 100%; margin: auto">
+            <canvas id="myBarChart"></canvas>
+          </div>
+        </div>
+
+        <div id="DetalleResultados" class="graficoInactivo">
+          <h4>Detalle de Resultados</h4>
+          <div style="width: 100%; margin: auto">
+            <canvas id="myLineChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Activos</th>
+            <th>Pasivos</th>
+            <th>Ingresos</th>
+            <th>Egresos</th>
+            <th>Mes</th>
+            <th>Resultados</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>10000</td>
+            <td>5000</td>
+            <td>8000</td>
+            <td>3000</td>
+            <td>Enero</td>
+            <td>5000</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <script src="./scripts/graficoPastel.js"></script>
+    <script src="./scripts/graficoBarras.js"></script>
+    <script src="./scripts/graficoLineas.js"></script>
+    <script src="./scripts/controlSelector.js"></script>
+
+    <script>
+        function cargarUsername(){
+            usernameSpan = document.getElementById("usernameSpan");
+            usernameSpan.innerHTML = localStorage.getItem("username")
+        }
+        function cerrarSesion(){
+            localStorage.removeItem("username");
+            window.location.href = 'login.html'; 
+        }
+        cargarUsername()
+    </script>
+  </body>
+</html>

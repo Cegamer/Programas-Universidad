@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+}
+
+.navbar {
+    background-color: #3c4b64;
+    color: white;
+}
+
+.logo {
+    margin-right: 10px;
+}
+
+.container {
+    margin-top: 80px;
+}
+
+aside {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #3c4b64;
+    color: white;
+    padding: 20px 0;
+}
+
+.list-unstyled {
+    display: flex;
+}
+
+.main {
+    margin-top: 10em;
+}
+
+.cartList {
+    list-style: none;
+}

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - MediCare Supplies</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/products.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="containernav">
+            <a href="#" class="navbar-brand">
+                <img src="./resources/Insumos-medicos.png" width="40px" alt="Logo MediCare Supplies" class="logo">
+                <h1 class="tituloPagina">MediCare Supplies</h1>
+            </a>
+            <div class="navbar-menu">
+                <ul>
+                    <li><a href="./index.html">Inicio</a></li>
+                    <li><a href="./productos.html">Productos</a></li>
+                    <li><a href="./index.html#contacto">Contacto</a></li>
+                    <li><a href="./index.html#about">Sobre nosotros</a></li>
+                    <li><a href="./preguntasFrecuentes.html">Preguntas Frecuentes</a></li>
+                    <li><a href="./preguntasFrecuentes.html">Políticas de Privacidad</a></li>
+                </ul>
+            </div>
+            <a href="./login.html" class="btn-login">Iniciar Sesión</a>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="main">
+        <div class="container mt-5">
+            <div class="row">
+                <aside class="col-md-3">
+                    <h4>Carrito de Compras</h4>
+                    <div id="cart" class="border rounded p-3">
+                        <ul id="cart-items" class="cartList"></ul>
+                        <p id="cart-total" class="font-weight-bold">Total: $0.00</p>
+                        <button class="btn btn-primary btn-block" id="checkout-btn">Proceder a la compra</button>
+                    </div>
+                </aside>
+
+                <main class="col-md-9">
+                    <div class="search-bar mb-3">
+                        <input type="text" id="search" class="form-control" placeholder="Buscar productos...">
+                    </div>
+
+                    <h4>Categorías</h4>
+                    <ul class="list-unstyled">
+                        <li><button class="btn btn-link" onclick="filterProducts('todos')">Todos</button></li>
+                        <li><button class="btn btn-link" onclick="filterProducts('insumos')">Insumos</button></li>
+                        <li><button class="btn btn-link" onclick="filterProducts('quirurgicos')">Quirúrgicos</button></li>
+                        <li><button class="btn btn-link" onclick="filterProducts('equipos')">Equipos</button></li>
+                    </ul>
+
+                    <div class="row" id="product-list">
+                        <!-- Cards de productos -->
+                        <div class="col-md-4 mb-4" data-category="insumos">
+                            <div class="card">
+                                <img src="./resources/N95.jpg" class="card-img-top" alt="Mascarillas Quirúrgicas">
+                                <div class="card-body">
+                                    <h5 class="card-title">Mascarillas Quirúrgicas</h5>
+                                    <p class="card-text">Mascarillas desechables para protección respiratoria.</p>
+                                    <p class="card-text font-weight-bold">$10.00</p>
+                                    <button class="btn btn-primary" onclick="addToCart('Mascarillas Quirúrgicas', 10)">Añadir al carrito</button>
+                                    <button class="btn btn-link" onclick="showDetails('Mascarillas Quirúrgicas')">Ver detalles</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4" data-category="quirurgicos">
+                            <div class="card">
+                                <img src="./resources/guantes.webp" class="card-img-top" alt="Guantes Estériles">
+                                <div class="card-body">
+                                    <h5 class="card-title">Guantes Estériles</h5>
+                                    <p class="card-text">Guantes desechables para procedimientos médicos.</p>
+                                    <p class="card-text font-weight-bold">$15.00</p>
+                                    <button class="btn btn-primary" onclick="addToCart('Guantes Estériles', 15)">Añadir al carrito</button>
+                                    <button class="btn btn-link" onclick="showDetails('Guantes Estériles')">Ver detalles</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4" data-category="equipos">
+                            <div class="card">
+                                <img src="./resources/estetl.webp" class="card-img-top" alt="Estetoscopio">
+                                <div class="card-body">
+                                    <h5 class="card-title">Estetoscopio</h5>
+                                    <p class="card-text">Estetoscopio de alta calidad para profesionales de la salud.</p>
+                                    <p class="card-text font-weight-bold">$20.00</p>
+                                    <button class="btn btn-primary" onclick="addToCart('Estetoscopio', 20)">Añadir al carrito</button>
+                                    <button class="btn btn-link" onclick="showDetails('Estetoscopio')">Ver detalles</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4" data-category="insumos">
+                            <div class="card">
+                                <img src="./resources/jeringa.webp" class="card-img-top" alt="Jeringas Desechables">
+                                <div class="card-body">
+                                    <h5 class="card-title">Jeringas Desechables</h5>
+                                    <p class="card-text">Jeringas estériles de un solo uso.</p>
+                                    <p class="card-text font-weight-bold">$5.00</p>
+                                    <button class="btn btn-primary" onclick="addToCart('Jeringas Desechables', 5)">Añadir al carrito</button>
+                                    <button class="btn btn-link" onclick="showDetails('Jeringas Desechables')">Ver detalles</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4" data-category="quirurgicos">
+                            <div class="card">
+                                <img src="./resources/suturas.webp" class="card-img-top" alt="Suturas">
+                                <div class="card-body">
+                                    <h5 class="card-title">Suturas</h5>
+                                    <p class="card-text">Suturas quirúrgicas absorbibles de diferentes tamaños.</p>
+                                    <p class="card-text font-weight-bold">$8.00</p>
+                                    <button class="btn btn-primary" onclick="addToCart('Suturas', 8)">Añadir al carrito</button>
+                                    <button class="btn btn-link" onclick="showDetails('Suturas')">Ver detalles</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4" data-category="equipos">
+                            <div class="card">
+                                <img src="./resources/termometro.jpg" class="card-img-top" alt="Termómetro Digital">
+                                <div class="card-body">
+                                    <h5 class="card-title">Termómetro Digital</h5>
+                                    <p class="card-text">Termómetro digital para mediciones precisas de temperatura.</p>
+                                    <p class="card-text font-weight-bold">$12.00</p>
+                                    <button class="btn btn-primary" onclick="addToCart('Termómetro Digital', 12)">Añadir al carrito</button>
+                                    <button class="btn btn-link" onclick="showDetails('Termómetro Digital')">Ver detalles</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+    <footer class="mt-5">
+        <div class="container text-center">
+            <h5>Información sobre envíos y devoluciones</h5>
+            <p>Ofrecemos envíos a nivel nacional. Las devoluciones son aceptadas dentro de los 30 días después de la compra.</p>
+            <p>&copy; 2024 MediCare Supplies. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        let cart = [];
+        let total = 0;
+
+        function addToCart(productName, productPrice) {
+            cart.push({ name: productName, price: productPrice });
+            total += productPrice;
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById('cart-items');
+            cartItems.innerHTML = '';
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+                cartItems.appendChild(li);
+            });
+            document.getElementById('cart-total').textContent = `Total: $${total.toFixed(2)}`;
+        }
+
+        document.getElementById('checkout-btn').onclick = function() {
+            alert('Procediendo a la compra...');
+        };
+
+        function filterProducts(category) {
+            const products = document.querySelectorAll('#product-list .col-md-4');
+            products.forEach(product => {
+                if (category === 'todos' || product.getAttribute('data-category') === category) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+
+        function showDetails(productName) {
+            alert(`Detalles de ${productName}`);
+        }
+
+        document.getElementById('search').onkeyup = function() {
+            const query = this.value.toLowerCase();
+            const products = document.querySelectorAll('#product-list .col-md-4');
+            products.forEach(product => {
+                const title = product.querySelector('.card-title').textContent.toLowerCase();
+                product.style.display = title.includes(query) ? 'block' : 'none';
+            });
+        };
+    </script>
+</body>
+</html>

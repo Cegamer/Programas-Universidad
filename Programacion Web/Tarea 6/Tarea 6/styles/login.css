@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    background-color: #3c4b64;
+    padding: 15px 20px;
+}
+
+.navbar-brand {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.tituloPagina {
+    display: inline;
+    margin-left: 10px;
+    color: white;
+}
+
+.main {
+    padding: 40px 0;
+}
+
+h2 {
+    color: #3c4b64;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.btn {
+    border-radius: 0;
+}
+
+footer {
+    background-color: #3c4b64;
+    color: white;
+    padding: 15px 0;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+}
+
+.btn-primary {
+    background-color: #4caf50;
+    border-color: #4caf50;
+}
+
+.btn-success {
+    background-color: #3c4b64;
+    border-color: #3c4b64;
+}
+
+.btn-primary:hover, .btn-success:hover {
+    opacity: 0.9;
+}
+
+footer {
+    position: absolute; 
+    width: 100%; 
+    bottom: 0;
+}
