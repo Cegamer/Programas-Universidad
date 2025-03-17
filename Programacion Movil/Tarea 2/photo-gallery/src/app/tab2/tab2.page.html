@@ -1,9 +1,4 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Photo Gallery    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header [userEmail]="'correo@ejemplo.com'" [userImage]="'assets/profile.jpg'"></app-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
@@ -11,11 +6,11 @@
       <ion-title size="large">Photo Gallery</ion-title>
     </ion-toolbar>
   </ion-header>
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+
   <ion-grid>
     <ion-row>
-      <ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
-        <ion-img *ngFor="let photo of photoService.photos" [src]="photo.webviewPath"></ion-img>
+      <ion-col size="6" *ngFor="let photo of photoService.photos">
+        <ion-img [src]="photo.webviewPath" (click)="showActionSheet(photo)"></ion-img>
       </ion-col>
     </ion-row>    
   </ion-grid>

@@ -1,20 +1,21 @@
-import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tab1Page } from './tab1.page';
-import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
-
-import { Tab1PageRoutingModule } from './tab1-routing.module';
+import { SharedModule } from '../shared/shared.module';
+import { HeaderComponent } from '../components/header.component';
 
 @NgModule({
+  declarations: [Tab1Page],  // Declaración del componente
   imports: [
-    IonicModule,
     CommonModule,
     FormsModule,
-    ExploreContainerComponentModule,
-    Tab1PageRoutingModule
+    IonicModule,    
+    HeaderComponent,
+    RouterModule.forChild([{ path: '', component: Tab1Page }])
   ],
-  declarations: [Tab1Page]
+  exports: [Tab1Page] // Exportar si es necesario
 })
 export class Tab1PageModule {}

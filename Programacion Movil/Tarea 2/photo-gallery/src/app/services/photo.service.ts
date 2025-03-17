@@ -1,9 +1,8 @@
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Injectable } from '@angular/core';
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, addDoc, getDocs, query, where, orderBy, deleteDoc, doc } from 'firebase/firestore';
+import { getFirestore, collection, addDoc, query, where, orderBy, deleteDoc, doc, onSnapshot, QuerySnapshot, getDocs } from 'firebase/firestore';
 
-// 🔥 Configuración de Firebase (asegúrate de usar tu propia configuración)
 const firebaseConfig = {
   apiKey: "AIzaSyATa_U8bJyQja2lbN__UTAJrqeGrWm_VbI",
   authDomain: "galeria-f9db8.firebaseapp.com",
@@ -13,7 +12,6 @@ const firebaseConfig = {
   appId: "1:934954748424:web:d11942d3e216c433bd5fbd"
 };
 
-// Inicializar Firebase y Firestore
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
@@ -23,7 +21,10 @@ const db = getFirestore(app);
 export class PhotoService {
   public photos: UserPhoto[] = [];
 
-  /** 📷 Tomar una nueva foto y subirla a Firestore */
+  constructor() {
+    this.listenToPhotos();
+  }
+
   public async addNewToGallery() {
     try {
       const capturedPhoto = await Camera.getPhoto({
@@ -35,69 +36,103 @@ export class PhotoService {
       const savedImageFile = await this.uploadToFirestore(capturedPhoto);
 
       if (savedImageFile) {
-        this.photos.unshift(savedImageFile);
-        console.log('✅ Foto guardada correctamente en Firestore:', savedImageFile);
-      } else {
-        console.error('❌ No se pudo guardar la imagen en Firestore.');
+        console.log('Foto guardada en Firestore:', savedImageFile);
       }
     } catch (error) {
-      console.error('❌ Error al capturar la foto:', error);
+      console.error('Error al capturar la foto:', error);
     }
   }
 
-  /** 🔄 Subir la imagen a Firestore */
   private async uploadToFirestore(photo: Photo): Promise<UserPhoto | null> {
     try {
       const fileName = `${Date.now()}.jpeg`;
-
-      // Convertir imagen a Base64
-      if (!photo.webPath) {
-        throw new Error('No se encontró la ruta de la imagen.');
-      }
-
-      const response = await fetch(photo.webPath);
-      const blob = await response.blob();
+      const response = await fetch(photo.webPath!);
+      let blob = await response.blob();
+      blob = await this.resizeImage(blob, 800, 800);
       const base64Data = (await this.convertBlobToBase64(blob)) as string;
 
-      // Crear objeto para guardar en Firestore
       const photoData: UserPhoto = {
         filepath: fileName,
         webviewPath: base64Data,
         timestamp: Date.now(),
       };
 
-      // Guardar en Firestore
       await addDoc(collection(db, 'photos'), photoData);
-
       return photoData;
     } catch (error) {
-      console.error('❌ Error subiendo la foto a Firestore:', error);
+      console.error("Error subiendo la foto a Firestore:", error);
       return null;
     }
   }
 
-  /** 🗑️ Eliminar foto de Firestore */
-  public async deletePicture(photo: UserPhoto, position: number) {
+  public async deletePicture(photo: UserPhoto) {
     try {
-      // Elimina la foto de la lista local
-      this.photos.splice(position, 1);
-
-      // Buscar la referencia en Firestore
       const q = query(collection(db, 'photos'), where('filepath', '==', photo.filepath));
       const querySnapshot = await getDocs(q);
 
-      // Eliminar la foto en Firestore
-      querySnapshot.forEach(async (docSnap) => {
+      for (const docSnap of querySnapshot.docs) {
         await deleteDoc(doc(db, 'photos', docSnap.id));
-      });
-
-      console.log('✅ Foto eliminada correctamente de Firestore');
+      }
     } catch (error) {
-      console.error('❌ Error eliminando la foto:', error);
+      console.error('Error eliminando la foto:', error);
     }
   }
 
-  /** 🔄 Convertir Blob a Base64 */
+  private listenToPhotos() {
+    const photosCollection = query(collection(db, 'photos'), orderBy('timestamp', 'desc'));
+
+    onSnapshot(photosCollection, (snapshot: QuerySnapshot) => {
+      this.photos = snapshot.docs.map(doc => doc.data() as UserPhoto);
+    });
+  }
+
+  private async resizeImage(blob: Blob, maxWidth: number, maxHeight: number): Promise<Blob> {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(blob);
+      reader.onload = (event) => {
+        const img = new Image();
+        img.src = event.target?.result as string;
+        img.onload = () => {
+          const canvas = document.createElement('canvas');
+          const ctx = canvas.getContext('2d');
+
+          if (!ctx) {
+            reject("Error al obtener el contexto del canvas.");
+            return;
+          }
+
+          let width = img.width;
+          let height = img.height;
+
+          if (width > maxWidth || height > maxHeight) {
+            const aspectRatio = width / height;
+            if (width > height) {
+              width = maxWidth;
+              height = width / aspectRatio;
+            } else {
+              height = maxHeight;
+              width = height * aspectRatio;
+            }
+          }
+
+          canvas.width = width;
+          canvas.height = height;
+          ctx.drawImage(img, 0, 0, width, height);
+
+          canvas.toBlob((newBlob) => {
+            if (newBlob) {
+              resolve(newBlob);
+            } else {
+              reject("Error al redimensionar la imagen");
+            }
+          }, "image/jpeg", 0.8);
+        };
+      };
+      reader.onerror = reject;
+    });
+  }
+
   private convertBlobToBase64(blob: Blob): Promise<string> {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -106,22 +141,8 @@ export class PhotoService {
       reader.readAsDataURL(blob);
     });
   }
-
-  /** 📥 Cargar imágenes guardadas desde Firestore */
-  public async loadSaved() {
-    try {
-      const q = query(collection(db, 'photos'), orderBy('timestamp', 'desc'));
-      const querySnapshot = await getDocs(q);
-
-      this.photos = querySnapshot.docs.map((docSnap) => docSnap.data() as UserPhoto);
-      console.log('📸 Fotos cargadas desde Firestore:', this.photos);
-    } catch (error) {
-      console.error('❌ Error al cargar las fotos desde Firestore:', error);
-    }
-  }
 }
 
-/** 📂 Interfaz para las fotos */
 export interface UserPhoto {
   filepath: string;
   webviewPath?: string;
