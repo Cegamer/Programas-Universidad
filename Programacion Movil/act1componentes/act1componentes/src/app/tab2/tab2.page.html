@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      No se
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 2</ion-title>
+    </ion-toolbar>
+  </ion-header>
+ <ion-item>
+  <ion-label class="ion-text-center">Ordena xfi</ion-label>
+ </ion-item>
+  <ion-list>
+    
+    <ion-reorder-group [disabled]="false" (ionItemReorder)="handleReorder($any($event))">
+      <ion-item>
+        <ion-label> Ethel Cain</ion-label>
+        <ion-reorder slot="end"></ion-reorder>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label> Taylor swift </ion-label>
+        <ion-reorder slot="end"></ion-reorder>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label> Noah Kahan</ion-label>
+        <ion-reorder slot="end"></ion-reorder>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label> Hozier</ion-label>
+        <ion-reorder slot="end"></ion-reorder>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label> Ariana Grande</ion-label>
+        <ion-reorder slot="end"></ion-reorder>
+      </ion-item>
+    </ion-reorder-group>
+  </ion-list>
+
+
+  <div class="wrapper">
+    <b>Toca alguna para ver un efecto</b>
+  
+    <div class="ion-activatable ripple-parent custom-parent">
+      Colorsito 
+      <ion-ripple-effect></ion-ripple-effect>
+    </div>
+  
+    <div class="ion-activatable ripple-parent">
+      Colorsito
+      <ion-ripple-effect class="custom-ripple"></ion-ripple-effect>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "chimbo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Algo
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 1</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-grid>
+    <ion-row>
+    
+      <ion-col class="column-style ion-text-center ion-justify-content-center ion-align-items-center" size="12" size-sm="4">
+        <h1>Holi</h1>
+        <ion-icon name="heart" aria-label="Favorite"></ion-icon>
+
+        <ion-item style="margin-top: 50px;">
+          <ion-input label="Escriba algo" placeholder="algo"></ion-input>
+        </ion-item>
+      </ion-col>
+
+     
+      <ion-col class="column-style ion-text-center ion-justify-content-center ion-align-items-center " size="12" size-sm="4">
+        <ion-button id="open-action-sheet">Botóntonton</ion-button>
+        <ion-action-sheet trigger="open-action-sheet" header="Actions" [buttons]="actionSheetButtons"></ion-action-sheet>
+      </ion-col>
+
+    
+      <ion-col class="column-style ion-justify-content-center ion-align-items-center" style="margin-top:5rem ;" size="12" size-sm="4">
+        <ion-datetime></ion-datetime>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  
+</ion-content>

@@ -1,0 +1,60 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tab 1
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-avatar>
+        <img src="https://i.pinimg.com/736x/92/f7/de/92f7de4cb207d1e6756aebf042ffe7fa.jpg" alt="Avatar">
+      </ion-avatar>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 1</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Bienvenido a la App</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Esta es una prueba de un componente de tarjeta en Ionic.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="full" (click)="openModal()">Abrir Modal</ion-button>
+
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Opción 1</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Opción 2</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Opción 3</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-modal #modal>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Imagen en Modal</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="closeModal()">Cerrar</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <img src="https://i.pinimg.com/736x/b2/dd/0d/b2dd0d8e03bc37184f18bdcfb6a99578.jpg" alt="Imagen Modal" class="modal-image">
+    </ion-content>
+  </ion-modal>
+</ion-content>
+
