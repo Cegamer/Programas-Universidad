@@ -1,0 +1,372 @@
+body {
+  background-color: #1d1b1b;
+  color: #e0e0e0;
+  margin: 0;
+  padding: 0;
+}
+
+.seccionGraficas canvas{
+
+
+    height: 50vh;
+}
+
+
+.graficoActivo {
+    display: block;
+}
+
+.graficoInactivo {
+    display: none;
+}
+
+
+
+/*  Estilos Header */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #3c4b64; 
+    color: white; 
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo img {
+    height: 50px; 
+    margin-right: 10px;
+  }
+
+  .user-info {
+    display: flex;
+    align-items: center;
+  }
+
+  .user-info span {
+    margin-right: 20px; 
+  }
+
+  .logout-button {
+    padding: 5px 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .logout-button:hover {
+    background-color: #45a049; 
+  }
+
+
+
+
+
+
+/* Contenedor general para las gráficas */
+.seccionGraficas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  height: fit-content;
+  width: 90vw;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 2em;
+  margin: 2em;
+
+
+}
+
+.seccionGraficas .balanceGeneralContainer,
+.seccionGraficas .resultadosContainer {
+  background-color: #2c2c2c;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  width: 48%;
+  height: fit-content;
+  align-items: center;
+  justify-content: center;
+}
+
+.seccionGraficas .balanceGeneralContainer h4,
+.seccionGraficas .resultadosContainer h4 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.seccionGraficas .balanceGeneralContainer p {
+  text-align: center;
+  color: #ffffff;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+/* Select personalizado para escoger el tipo de gráfico */
+.seccionGraficas .resultadosContainer select#grafico {
+  display: block;
+  margin: 0 auto 5px;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #444;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.seccionGraficas .resultadosContainer select#grafico:hover {
+  border-color: #4a90e2;
+}
+
+/* Para gráficos activos e inactivos */
+.seccionGraficas .graficoActivo {
+  display: block;
+}
+
+.seccionGraficas .graficoInactivo {
+  display: none;
+}
+
+/* Estilo para los gráficos de Chart.js */
+.seccionGraficas canvas {
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+  width: 100%;  /* Ajuste al 100% del ancho disponible */
+}
+
+/* Ajustar altura específica para cada gráfico */
+#myPieChart {
+  height: 200px;  /* Altura menor para la gráfica de pastel */
+}
+
+.seccionGraficas .resultadosContainer canvas {
+  height: 300px;  /* Altura fija para las demás gráficas */
+}
+
+/* Centrar las gráficas dentro de sus contenedores */
+.seccionGraficas div {
+  width: 100%;
+  max-width: 500px;
+  height: 50vh;
+
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+
+  
+/* Contenedor de las tarjetas */
+.flexGruposContables {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Estilos para cada tarjeta */
+.contenedorGrupoContable {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  width: 40%;
+  transition: transform 0.2s ease-in-out;
+}
+
+@media only screen and (max-width: 1024px) {
+  .contenedorGrupoContable {
+    padding: 20px;
+    width: 80%;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+}
+
+
+@media only screen and (max-width: 426px) {
+  .contenedorGrupoContable {
+    padding: 20px;
+    width: 95%;
+    transition: transform 0.2s ease-in-out;
+  }
+  table {
+    max-width: 400px;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: #2c2c2c;
+  }
+  
+  
+}
+
+
+/* Efecto hover en tarjetas */
+.contenedorGrupoContable:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Título personalizado para las tarjetas */
+.titulo-tarjeta {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  color: #ffffff;
+  text-align: center;
+  border-bottom: 2px solid #4a90e2;
+  padding-bottom: 10px;
+}
+
+/* Estilo para las tablas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background-color: #2c2c2c;
+}
+
+th, td {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #444;
+  color: #d3d3d3;
+}
+
+/* Clase personalizada para botones */
+.boton-accion {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.boton-accion:hover {
+  background-color: #357abd;
+}
+
+/* Estilo para las celdas de referencia y valores */
+td:nth-child(1), td:nth-child(2) {
+  font-weight: bold;
+  color: #b0b0b0;
+}
+
+/* Estilo para la fecha */
+td:nth-child(3) {
+  font-style: italic;
+  color: #888;
+}
+
+
+
+
+
+
+
+
+
+/* Estilos del modal */
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #1e1e1e;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #444;
+  width: 400px;
+  border-radius: 8px;
+  color: #fff;
+}
+
+/* Estilos para los labels */
+.modal-content label {
+  display: block;
+  margin: 10px 0 5px;
+  color: #e0e0e0;
+  font-size: 14px;
+}
+
+/* Estilos para los inputs del modal */
+.modal-content input[type="text"],
+.modal-content input[type="number"],
+.modal-content input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #2c2c2c;
+  color: #fff;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.modal-content input[type="text"]::placeholder,
+.modal-content input[type="number"]::placeholder,
+.modal-content input[type="date"]::placeholder {
+  color: #888;
+}
+
+/* Estilos para el botón de guardar */
+.modal-content button[type="submit"] {
+  width: 100%;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content button[type="submit"]:hover {
+  background-color: #357abd;
+}
+
+/* Cerrar modal */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover, .close:focus {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}

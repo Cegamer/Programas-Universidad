@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="./styles/login.css" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="..." fill="#90e0ef"></path>
+                </svg>
+                <span class="brand-text">TuContableOnline</span>
+            </a>
+            <span class="navbar-toggler-icon"></span>
+        </div>
+    </nav>
+
+    <div id="welcome">
+        <div class="container">
+            <div class="form-container">
+                <form onsubmit="login(event)" class="login-form">
+                    <input id="username" type="text" placeholder="Usuario" required>
+                    <input id="password" type="password" placeholder="Contraseña" required>
+                    <input type="submit" value="Iniciar Sesión">
+                </form>
+                <img src="https://cdn-icons-png.flaticon.com/512/11689/11689908.png" alt="Logo" class="form-logo">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function login(event){
+            event.preventDefault();
+            const username = document.getElementById("username").value;
+            localStorage.setItem("username", username);
+            window.location.href = 'contable.html'; 
+        }
+    </script>
+</body>
+</html>

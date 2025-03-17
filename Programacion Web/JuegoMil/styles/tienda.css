@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap');
+*{
+    box-sizing: border-box;
+}
+body{
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+}
+header {
+    background-color: #000000; 
+    z-index: 1000;
+}
+.navbar-nav {
+    display: flex;
+    justify-content: center; 
+    width: 100%; 
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff; 
+    font-size: 1.25rem; 
+    padding: 10px 15px; 
+    text-align: center; 
+}
+
+
+.navbar-nav .nav-link:hover {
+    color: #3bf816; 
+    background-color: rgba(255, 255, 255, 0.1); 
+}
+
+
+#carrousel img{
+    height: 100vh;
+}
+
+.card{
+    height: 100%;
+    border-radius: 0;
+    border: none;
+}
+.card-body {
+    background-color: #70e000;
+}
+
+.card a, #productos button{
+    border-radius: 0;
+    border: none;
+    background-color: #000000;
+    color: aliceblue;
+}
+
+.card a:hover, .card a:active, .card a:focus, #productos button:hover, #productos button:active, #productos button:focus {
+    
+
+    background-color: #132a13;
+    color: aliceblue;
+}
+
+.card img {
+    height: 250px; 
+    object-fit: cover; 
+    width: 100%; 
+    border-radius: 0;
+}

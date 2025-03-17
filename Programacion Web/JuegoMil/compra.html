@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra de Juego</title>
+    <link rel="stylesheet" href="/styles/compra.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Detalles de Compra</h1>
+        <div id="game-details">
+            <!-- Aquí se mostrarán los detalles del juego -->
+        </div>
+        <h2>Información de Pago</h2>
+        <form id="payment-form">
+            <label for="name">Nombre en la tarjeta:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="card-number">Número de tarjeta:</label>
+            <input type="text" id="card-number" name="card-number" required>
+
+            <label for="expiry">Fecha de expiración:</label>
+            <input type="text" id="expiry" name="expiry" required>
+
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" required>
+
+            <button id="comprar-btn">Finalizar Compra</button>
+        </form>
+    </div>
+
+    <script src="./scripts/compra.js"></script>
+</body>
+</html>

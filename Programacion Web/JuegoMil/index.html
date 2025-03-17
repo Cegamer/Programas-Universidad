@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Suscripciones</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/index.css">
+    <style>
+        /* Estilos para el carrusel de ofertas destacadas */
+        .carousel-item img {
+            width: 100%;
+            height: 400px; /* Ajusta la altura de la imagen según lo necesites */
+            object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+        }
+    </style>
+  </head>
+  <body>
+    <header class="fixed-top m-0">
+        <nav class="navbar navbar-expand-lg align-middle">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse me-2" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="tienda.html">Tienda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="sus.html">Suscripción</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="perfil.html">Mi perfil</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sección de presentación -->
+    <section id="presentation" class="presentation d-flex align-items-center mt-5 pt-5">
+        <div class="container ms-3">
+            <h1 class="display-2 protest-strike-regular">Game Stream Unlimited</h1>
+            <div class="bloquesito my-2"></div>
+            <p class="lead text-wrap">
+                ¿Buscas juegos nuevos o clásicos a precios increíbles? ¡Explora nuestra tienda online de videojuegos! Contamos con una amplia variedad de títulos para todas las plataformas y géneros. Desde los últimos lanzamientos hasta joyas retro, ¡encuentra aquí tu próximo juego favorito!
+            </p>
+            <a href="" class="btn btn-primary">ÚNETE AHORA
+                <svg class="mb-1" width="1rem" height="1rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Sección de Juegos Destacados en formato de cards -->
+    <section id="juegos-destacados" class="container mt-5">
+        <h2 class="text-center mb-4">Juegos Destacados</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://assets.nintendo.com/image/upload/ar_16:9,c_lpad,w_1240/b_white/f_auto/q_auto/ncom/software/switch/70010000001801/7aa9c6cf5e7d4cecf481f18b1d7a9d79e7aab85045b22203effb2dda409bc5b7" class="card-img-top" alt="Juego 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Stardew Valley</h5>
+                        <p class="card-text">Te mudas a una pequeña granja heredada de tu abuelo y debes reconstruirla y cultivarla. Además de cultivar, puedes pescar, criar animales, explorar minas, relacionarte con los habitantes del pueblo y formar una familia. </p>
+                        <button class="btn btn-primary" onclick="verMas(1)">Ver más</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://cdn1.epicgames.com/offer/2a14cf8a83b149919a2399504e5686a6/SIMS4_EPIC_LANDSCAPE-Product-Image_2560x1440_2560x1440-9072dd5d94cccaf50d8b3edede5ba8a9" class="card-img-top" alt="Juego 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Los Sims 4</h5>
+                        <p class="card-text">Crea un sim, personalízalo a tu gusto y guíalo a través de su vida. Puedes construir casas, desarrollar relaciones, tener una carrera, explorar diferentes mundos y mucho más.</p>
+                        <button class="btn btn-primary" onclick="verMas(2)">Ver más</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/manual/Misc/F1%20Game/EA_F124_KEY_STANDARD_16by9Centre" class="card-img-top" alt="Juego 3">
+                    <div class="card-body">
+                        <h5 class="card-title">F1 2024</h5>
+                        <p class="card-text">Vive la emoción de la Fórmula 1 al volante de tu coche favorito. Compite en circuitos reales, personaliza tu coche y tu piloto, y lucha por ser el campeón del mundo.</p>
+                        <button class="btn btn-primary" onclick="verMas(3)">Ver más</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección desplegable de información adicional sobre el juego -->
+    <section id="informacionJuego" class="container mt-4 d-none">
+        <h3>Más información sobre el Juego <span id="juegoNombre"></span></h3>
+        <p id="juegoDescripcion">Descripción detallada del juego seleccionado.</p>
+    </section>
+
+    <!-- Sección de Ofertas Destacadas -->
+    <section id="ofertas-destacadas" class="container mt-5">
+        <h2 class="text-center mb-4">Ofertas Destacadas</h2>
+        <div id="carouselOfertas" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://store-images.s-microsoft.com/image/apps.26978.14192317693538395.4ad83a19-43ed-4c50-aad1-b3cf645854b5.0619c362-7977-4f7c-971b-efcf99ea2c19?q=90&w=480&h=270" class="d-block w-100" alt="Oferta 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/292030/header.jpg?t=1689615330" class="d-block w-100" alt="Oferta 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1066780/header.jpg?t=1689615334" class="d-block w-100" alt="Oferta 3">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselOfertas" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselOfertas" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "title": "Silent Hill 2",
+        "description": "La versión reimaginada del aclamado juego de la saga de Silent Hill.",
+        "category": "juegos",
+        "price": 59.99,
+        "image": "silent-hill-vert"
+    },
+    {
+        "id": 2,
+        "title": "Contenido descargable Sparking Zero",
+        "description": "Complementa tu sesión de juego de Sparking Zero.",
+        "category": "complementos",
+        "price": 19.99,
+        "image": "sparking.jpeg"
+    },
+    {
+        "id": 3,
+        "title": "Resident Evil Racoon City Edition",
+        "description": "Un bundle exclusivo con las entregas de Resident Evil 2 y 3 remake.",
+        "category": "paquetes",
+        "price": 49.99,
+        "image": "racoon"
+    },
+    {
+        "id": 4,
+        "title": "Cyberpunk 2077",
+        "description": "Sumérgete en el universo de Cyberpunk.",
+        "category": "juegos",
+        "price": 49.99,
+        "image": "cyber.jpg"
+    },
+    {
+        "id": 5,
+        "title": "RE7: End of Zoe",
+        "description": "Experimenta la continuación de la historia principal de Resident Evil 7.",
+        "category": "complementos",
+        "price": 14.99,
+        "image": "re7"
+    },
+    {
+        "id": 6,
+        "title": "Dead By Daylight Special Edition",
+        "description": "Un bundle exclusivo con el juego base de Dead by Daylight y su contenido descargable.",
+        "category": "paquetes",
+        "price": 39.99,
+        "image": "dbd.jpg"
+    }
+]

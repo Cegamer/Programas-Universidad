@@ -1,0 +1,119 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Fondo oscuro */
+    color: #e0e0e0; /* Texto claro */
+    padding: 20px;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #1e1e1e; /* Fondo del contenedor oscuro */
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra más oscura */
+    border-radius: 10px;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #52b788; /* Verde claro */
+}
+
+/* Detalles del juego */
+#game-details {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#game-details img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra más fuerte */
+}
+
+#game-details h2 {
+    font-size: 24px;
+    color: #52b788; /* Verde claro */
+    margin-bottom: 10px;
+}
+
+#game-details p {
+    font-size: 18px;
+    color: #a0a0a0; /* Gris claro */
+    margin-bottom: 10px;
+}
+
+#game-details strong {
+    color: #40916c; /* Verde medio */
+}
+
+/* Estilos para el formulario de pago */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    color: #52b788; /* Verde claro */
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #52b788; /* Borde verde */
+    border-radius: 5px;
+    width: 100%;
+    background-color: #1e1e1e; /* Fondo del input oscuro */
+    color: #e0e0e0; /* Texto claro */
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #40916c; /* Verde más oscuro al enfocar */
+    outline: none;
+}
+
+button {
+    padding: 12px;
+    font-size: 18px;
+    color: white;
+    background-color: #52b788; /* Verde claro */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #40916c; /* Verde más oscuro en hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    #game-details img {
+        max-width: 90%;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,72 @@
+/* Estilos para el Header */
+header {
+    background-color: #1a1a1a; /* Fondo oscuro */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    padding: 30px 0; /* Espaciado vertical */
+    z-index: 1000; /* Asegurar que esté encima de otros elementos */
+    width: 100%;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    top: 0;
+    margin-bottom: 30px;
+}
+
+.navbar {
+    padding: 0; /* Eliminar padding para un ajuste más preciso */
+    border: none;
+}
+
+.navbar-toggler {
+    border: none; /* Eliminar el borde del botón */
+}
+
+.navbar-toggler-icon {
+    background-color: #00b4d8; /* Color del icono del toggler */
+}
+
+.navbar-collapse {
+    justify-content: flex-end; /* Alinear los elementos a la derecha */
+}
+
+.navbar-nav {
+    list-style: none; /* Eliminar los estilos de lista */
+    display: flex; /* Mostrar los enlaces en fila */
+    gap: 15px; /* Espacio entre los enlaces */
+}
+
+.navbar-nav .nav-item {
+    position: relative; /* Para la pseudo-clase de activación */
+}
+
+.navbar-nav .nav-link {
+    color: #00d836; /* Color del texto del enlace */
+    padding: 10px 15px; /* Espaciado interno */
+    transition: color 0.3s, background-color 0.3s; /* Transiciones suaves */
+    text-decoration: none; /* Eliminar subrayado */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #197b03; /* Color del enlace al pasar el mouse */
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo claro al pasar el mouse */
+}
+
+.navbar-nav .nav-item.active .nav-link {
+    font-weight: bold; /* Hacer el texto activo más destacado */
+    color: #ffffff; /* Color blanco para el enlace activo */
+    background-color: rgba(0, 128, 0, 0.2); /* Fondo verde claro para el enlace activo */
+}
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column; /* Alinear elementos en columna en móviles */
+        width: 100%; /* Ancho completo para el menú */
+    }
+
+    .navbar-nav .nav-link {
+        padding: 10px; /* Ajustar el espaciado en móviles */
+        width: 100%; /* Ocupar todo el ancho del menú */
+    }
+}

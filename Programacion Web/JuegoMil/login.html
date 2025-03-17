@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión / Registro</title>
+    <link rel="stylesheet" href="./styles/login.css">
+    <link rel="stylesheet" href="./styles/header.css">
+</head>
+<body>
+    <header class="fixed-top m-0">
+        <nav class="navbar navbar-expand-lg align-middle ">
+            <div class="barranav">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse me-2" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="tienda.html">Tienda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="sus.html">Suscripción</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="perfil.html">Mi perfil</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="box">
+            <div class="tab-container">
+                <button id="login-tab" class="tab active">Iniciar Sesión</button>
+                <button id="register-tab" class="tab">Registrarse</button>
+                <button id="forgot-tab" class="tab">Recuperar Contraseña</button>
+            </div>
+            <div class="form-container">
+                <!-- Formulario de Iniciar Sesión -->
+                <form id="login-form" class="form active">
+                    <h2>Iniciar Sesión</h2>
+                    <input id="login-email" type="email" placeholder="Correo Electrónico" required>
+                    <input id="login-password" type="password" placeholder="Contraseña" required>
+                    <div class="options">
+                        <button type="button" id="forgot-password-btn" class="btn-link">¿Olvidaste tu contraseña?</button>
+                    </div>
+                    <button id="login-btn" type="submit" class="btn">Entrar</button>
+                </form>
+
+                <!-- Formulario de Registro -->
+                <form id="register-form" class="form">
+                    <h2>Registrarse</h2>
+                    <input id="register-name" type="text" placeholder="Nombre" required>
+                    <input id="register-email" type="email" placeholder="Correo Electrónico" required>
+                    <input id="register-password" type="password" placeholder="Contraseña" required>
+                    <button id="register-btn" type="submit" class="btn">Registrarse</button>
+                </form>
+
+                <!-- Formulario de Recuperación de Contraseña -->
+                <form id="forgot-form" class="form">
+                    <h2>Recuperar Contraseña</h2>
+                    <input type="email" placeholder="Correo Electrónico" required>
+                    <button type="submit" class="btn">Enviar Enlace</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="./scripts/login.js"></script>
+</body>
+</html>

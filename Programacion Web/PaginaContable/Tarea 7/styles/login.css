@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,900;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --background-color: #00253E;
+    --text-color: #333;
+    --input-bg-color: #fff;
+    --button-color: #2980b9;
+    --button-hover-color: #1f6399;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+nav {
+    background-color: var(--primary-color);
+    padding: 10px 20px;  /* Añadido para espaciado */
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+}
+
+.brand-text {
+    margin-left: 10px;  /* Espaciado entre el logo y el texto */
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #f8f9fa;
+}
+
+/* Welcome Section */
+#welcome {
+    background: url('https://cdn.prod.website-files.com/5f7f90ecc4aec0e36886a9af/62f58bb13419b9e5a32082f7_dot-pattern.svg') no-repeat center center;
+    background-size: cover; 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Form Container */
+.form-container {
+    background-color: var(--primary-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.login-form input[type="text"], 
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin: 15px 0;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: var(--input-bg-color);
+    font-size: 1em;
+}
+
+.login-form input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--button-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1.1em;
+}
+
+.login-form input[type="submit"]:hover {
+    background-color: var(--button-hover-color);
+}
+
+
+.form-logo {
+    display: block;
+    margin: 20px auto;
+    max-width: 150px;
+}

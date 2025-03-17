@@ -1,0 +1,16 @@
+/* Estilos del Header */
+.navbar {
+    background-color: #0056b3;
+    padding: 15px;
+}
+
+.nav-link {
+    color: white !important;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.navbar-brand {
+    color: white !important;
+    font-size: 1.5rem;
+}

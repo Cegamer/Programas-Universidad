@@ -1,0 +1,71 @@
+/* Estilos generales para la página de compras de suscripción */
+
+body {
+    background-color: #121212; /* Color de fondo oscuro */
+    color: #ffffff; /* Color del texto */
+    font-family: 'Arial', sans-serif; /* Fuente */
+}
+
+header {
+    background-color: #1a1a1a; /* Color de fondo del header */
+}
+
+.navbar-nav .nav-link {
+    color: #CAF0F8 !important; /* Color de los enlaces en la navegación */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #90e0ef !important; /* Color al pasar el mouse */
+}
+
+.container {
+    max-width: 800px; /* Ancho máximo del contenedor */
+}
+
+h1, h2, h3, h4 {
+    color: #90e0ef; /* Color de los encabezados */
+}
+
+form {
+    background-color: #1a1a1a; /* Fondo del formulario */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para el formulario */
+}
+
+.form-control {
+    background-color: #333; /* Color de fondo de los campos de entrada */
+    color: #ffffff; /* Color del texto en los campos */
+    border: 1px solid #90e0ef; /* Borde de los campos */
+}
+
+.form-control:focus {
+    background-color: #444; /* Color de fondo al enfocar el campo */
+    border-color: #90e0ef; /* Color del borde al enfocar */
+    box-shadow: 0 0 5px #90e0ef; /* Sombra al enfocar el campo */
+}
+
+.btn-primary {
+    background-color: #90e0ef; /* Color del botón de completar pago */
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #00b4d8; /* Color al pasar el mouse */
+}
+
+#receipt {
+    background-color: #1a1a1a; /* Fondo del recibo */
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#receipt h3 {
+    color: #90e0ef; /* Color del encabezado del recibo */
+}
+
+#receipt p {
+    color: #ffffff; /* Color del texto del recibo */
+}

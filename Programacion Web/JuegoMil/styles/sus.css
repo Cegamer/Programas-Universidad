@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap');
+*{
+    box-sizing: border-box;
+}
+header {
+    background-color: #000000; 
+    z-index: 1000;
+}
+.navbar-nav {
+    display: flex;
+    justify-content: left; 
+    width: 100%; 
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff; 
+    font-size: 1.25rem; 
+    padding: 10px 15px; 
+    text-align: center; 
+}
+
+
+.navbar-nav .nav-link:hover {
+    color: #3bf816; 
+    background-color: rgba(255, 255, 255, 0.1); 
+}
+body{
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+}
+
+.protest-strike-regular {
+    font-family: "Protest Strike", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  section{
+    height: 100vh;
+  }
+
+#presentation{
+    background: url("../assets/re2r.jpg") no-repeat;
+    background-position:  center;
+    background-size: cover;
+    height: 100vh;
+}
+
+#presentation p{
+   width: 40rem;
+}
+
+#presentation a{
+    width: 10rem;
+    border-radius: 0;
+    background-color: #70e000;
+    border: none;
+    color: black;
+    font-weight: bold;
+}
+.bloquesito{
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    background-color: #70e000;
+    width: 80px;
+    height: 20px;
+}
+#features{
+    background:url("../assets/claire.jpeg") no-repeat;
+    background-position:  center;
+    background-size: cover;
+
+}
+
+.card{
+    height: 100%;
+    border-radius: 0;
+    border: none;
+}
+.card-body {
+    background-color: #70e000;
+}
+
+#features button{
+    border-radius: 0;
+    border: none;
+    background-color: #70e000;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+.card a{
+    border-radius: 0;
+    border: none;
+    background-color: #000000;
+    color: aliceblue;
+}
+
+.card a:hover, .card a:active, .card a:focus, #features button:hover, #features button:active, #features button:focus{ 
+    background-color: #132a13;
+    color: aliceblue;
+}

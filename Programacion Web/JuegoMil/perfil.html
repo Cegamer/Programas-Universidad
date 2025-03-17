@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil</title>
+    <link rel="stylesheet" href="./styles/perfil.css">
+    <link rel="stylesheet" href="./styles/header.css">
+
+
+</head>
+<body>
+    <header class="fixed-top m-0">
+        <nav class="navbar navbar-expand-lg align-middle ">
+            <div class="barranav">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse me-2" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="tienda.html">Tienda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="sus.html">Suscripción</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="perfil.html">Mi perfil</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Mi Perfil</h1>
+        <div class="profile-section">
+            <h2>Información del Usuario</h2>
+            <div class="profile-info">
+                <div>
+                    <label for="nombre">Nombre:</label>
+                    <span id="nombre-text">Federico</span>
+                    <input type="text" id="nombre" class="editable" value="Federico" style="display: none;">
+                </div>
+                <div>
+                    <label for="email">Correo Electrónico:</label>
+                    <span id="email-text">federico@example.com</span>
+                    <input type="email" id="email" class="editable" value="federico@example.com" style="display: none;">
+                </div>
+                <div>
+                    <label for="suscripcion">Estado de Suscripción:</label>
+                    <span id="suscripcion-text">Activo</span>
+                    <input type="text" id="suscripcion" class="editable" value="Activo" style="display: none;">
+                </div>
+                <button id="edit-btn" class="btn">Editar</button>
+                <button id="save-btn" class="btn" style="display: none;">Guardar</button>
+            </div>
+        </div>
+
+        <div class="purchase-history-section">
+            <h2>Historial de Compras</h2>
+            <table class="purchase-history">
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>12/08/2024</td>
+                        <td>Videojuego X</td>
+                        <td>$59.99</td>
+                        <td>Completado</td>
+                    </tr>
+                    <tr>
+                        <td>05/07/2024</td>
+                        <td>Suscripción Premium</td>
+                        <td>$9.99</td>
+                        <td>Activo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="./scripts/perfil.js"></script>
+  
+</body>
+</html>

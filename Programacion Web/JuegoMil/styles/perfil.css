@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0e0e0e;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.container {
+    width: 600px;
+    background-color: #1b1b1b;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+}
+
+h1 {
+    text-align: center;
+    color: #00ff00;
+    margin-bottom: 20px;
+}
+
+.profile-section, .purchase-history-section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.profile-info div {
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 16px;
+    color: #cccccc;
+}
+
+span {
+    font-size: 16px;
+    color: #ffffff;
+}
+
+input.editable {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #333;
+    color: white;
+    margin-top: 5px;
+    display: block;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #333;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #00ff00;
+    color: black;
+}
+
+td {
+    background-color: #1b1b1b;
+}
+
+.btn {
+    background-color: #00ff00;
+    color: black;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+    background-color: #00cc00;
+}
+
+.btn-link {
+    color: #00ff00;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 14px;
+}
