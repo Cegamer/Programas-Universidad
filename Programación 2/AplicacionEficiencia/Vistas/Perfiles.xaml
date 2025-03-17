@@ -1,0 +1,47 @@
+﻿<Page x:Class="AplicacionEficiencia.Vistas.Perfiles"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AplicacionEficiencia.Vistas"
+      mc:Ignorable="d"      d:DesignHeight="555" d:DesignWidth="1130"
+      Title="Perfiles">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <!--#region PageTitle -->
+        <DockPanel Grid.Column="1" Grid.Row="1">
+            <TextBlock Text="Mis Perfiles"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Foreground="White"
+                       FontSize="30"
+                       FontWeight="Bold"/>
+            <Button 
+                Content="+" 
+                HorizontalAlignment="Right" 
+                Width="40" 
+                Height="40" 
+                Name="btn_new_profile"
+                FontSize="17"
+                Style="{StaticResource HighEnfasisButton}"/>
+        </DockPanel>
+        <!--#endregion-->
+
+        <ScrollViewer  Grid.Column="1" Grid.Row="3" VerticalScrollBarVisibility="Hidden">
+            <Grid x:Name="profiles_grid" Background="Transparent"/>
+        </ScrollViewer>
+    </Grid>
+</Page>

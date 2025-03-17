@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Vistas\Ajustes.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Vistas\Estadistica.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Vistas\Informacion.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Vistas\ModificarPerfil.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Vistas\Perfiles.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Vistas\SesionActual.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Temas\DataGrid.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Temas\DataGridCell.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Temas\DataGridHeader.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Temas\DataGridRow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Temas\EnfasisButtons.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Temas\ScrollBarStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Temas\Slider.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Temas\TextBoxStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Vistas\Ajustes.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Vistas\Estadistica.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Vistas\Informacion.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Vistas\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Vistas\ModificarPerfil.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Vistas\Perfiles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Vistas\SesionActual.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

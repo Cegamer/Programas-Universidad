@@ -1,0 +1,146 @@
+﻿<Page x:Class="AplicacionEficiencia.Vistas.Estadistica"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AplicacionEficiencia.Vistas"
+      xmlns:Modelos="clr-namespace:AplicacionEficiencia.Modelos"
+      xmlns:Controladores="clr-namespace:AplicacionEficiencia.Controladores"
+      xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF" 
+      mc:Ignorable="d" 
+      d:DesignHeight="555" d:DesignWidth="900"
+      Title="Estadisticas"
+      Background="Transparent">
+
+    <Grid>
+        <!--#region Grid Definitions -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <!--#endregion-->
+
+        <TextBlock Text="Estadisticas"
+                   Grid.Column="1" Grid.Row="1"
+                   Foreground="White"
+                   FontSize="30"
+                   FontWeight="Bold"
+                   Name="nombre_perfil"
+                   Margin="0 0 0 16"/>
+
+        <ScrollViewer Grid.Column="1" Grid.Row="2" VerticalScrollBarVisibility="Hidden">
+            <StackPanel>
+                
+                <StackPanel Name="profile_stats_section" Margin="0 0 0 40">
+                    <TextBlock 
+                        Grid.Column="1" Grid.Row="1" 
+                        Text="TODOS LOS PERFILES"
+                        Foreground="#8d8d93"
+                        FontSize="15"
+                        Margin="16 0 0 5"/>
+
+                    <Border Background="#1c1c1e" CornerRadius="8" Padding="5 10">
+                        <StackPanel>
+                            <TextBlock 
+                                Grid.Column="1" Grid.Row="1" 
+                                Text="Uso Promedio de Hoy"
+                                Foreground="#989899"
+                                FontSize="15"
+                                Margin="16 0 0 0"/>
+                            <TextBlock 
+                                Name="txt_profile_time"
+                                Grid.Column="1" Grid.Row="1" 
+                                Text="0h"
+                                Foreground="#ffffff"
+                                FontSize="30"
+                                FontWeight="SemiBold"
+                                Margin="16 0 0 0"/>
+
+                            <lvc:CartesianChart Name="profile_stats_chart" Height="250" Series="{Binding Series}" XAxes="{Binding XAxes}" YAxes="{Binding YAxes}">
+                            </lvc:CartesianChart>
+                        </StackPanel>
+                    </Border>
+
+                    <TextBlock 
+                        Text="Esta sección muestra las estadísticas de uso de perfiles en tiempo real. Aquí podrás monitorear la actividad y el rendimiento de cada perfil, lo que te permitirá tomar decisiones informadas basadas en datos actualizados"
+                        Grid.Column="1" Grid.Row="3" 
+                        Foreground="#8d8d93"
+                        FontSize="13"
+                        Margin="16 5 0 16"
+                        TextWrapping="Wrap"/>
+                </StackPanel>
+
+                <StackPanel Name="aplication_stats_section">
+                    <TextBlock 
+                        Text="TIEMPO POR PROGRMA"
+                        Foreground="#8d8d93"
+                        FontSize="15"
+                        Margin="16 0 0 5"/>
+                    <Border Background="#1c1c1e" CornerRadius="8" Padding="10">
+                        <StackPanel>
+                            <lvc:CartesianChart Height="200" Name="apps_stats_chart" Series="{Binding Series}" XAxes="{Binding XAxes}" YAxes="{Binding YAxes}" TooltipPosition="Hidden"/>
+                            <Border Height="0.5" Background="#47474a" Margin="16 0 16 16" Visibility="Visible"/>
+                            <TextBlock 
+                                Grid.Column="1" Grid.Row="1" 
+                                Text="Filtrar por Fecha"
+                                FontWeight="SemiBold"
+                                Foreground="#ffff"
+                                FontSize="17"
+                                Margin="16 0 0 16"/>
+                            <TextBlock 
+                                Grid.Column="1" Grid.Row="1" 
+                                Text="Fecha Inicio"
+                                Foreground="#989899"
+                                FontSize="15"
+                                Margin="16 0 0 0"/>
+
+                            <DatePicker Margin="16 0 0 16"
+                                        Name="datep_fecha_inicio"
+                                        Width="auto" Height="30"
+                                        FontSize="17"
+                                        Foreground="#989899"
+                                        Background="Transparent"
+                                        BorderBrush="Transparent">
+                                <DatePicker.Resources>
+                                    <Style TargetType="DatePickerTextBox">
+                                        <Setter Property="Background" Value="Transparent" />
+                                    </Style>
+                                </DatePicker.Resources>
+                            </DatePicker>
+
+                            <TextBlock 
+                                Grid.Column="1" Grid.Row="1" 
+                                Text="Fecha Fin"
+                                Foreground="#989899"
+                                FontSize="15"
+                                Margin="16 0 0 0"/>
+                            <DatePicker Margin="16 0 0 16"
+                                        Name="datep_fecha_fin"
+                                        Width="auto" Height="30"
+                                        FontSize="17"
+                                        Foreground="#989899"
+                                        Background="Transparent"
+                                        BorderBrush="Transparent">
+                                        <DatePicker.Resources>
+                                            <Style TargetType="DatePickerTextBox">
+                                                <Setter Property="Background" Value="Transparent" />
+                                            </Style>
+                                        </DatePicker.Resources>
+                            </DatePicker>
+
+                            <Button x:Name="btn_apply_filter" Content="Filtrar" Height="36" Style="{StaticResource MediumEnfasisCardButton}" FontSize="17"/>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+                
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

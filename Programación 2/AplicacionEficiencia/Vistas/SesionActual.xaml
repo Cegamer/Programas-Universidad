@@ -1,0 +1,110 @@
+﻿<Page x:Class="AplicacionEficiencia.Vistas.SesionActual"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AplicacionEficiencia.Vistas"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SesionActual">
+
+    <Grid Background="Black">
+        <!--#region Grid Definitions -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <!--#endregion-->
+
+        <Label
+            Grid.Column="1" Grid.Row="1"
+            Padding="5 0 0 0"
+            FontSize="30"
+            FontWeight="Bold"
+            Content="TextBlock"
+            Foreground="White"
+            Name="label_profile_name"/>
+
+        <Label
+            Grid.Column="1" Grid.Row="2"
+            Padding="5 0 0 0"
+            Margin="0 0 0 16"
+            FontSize="15"
+            Content="TextBlock"
+            Foreground="#8d8d93"
+            Name="label_profile_info"/>
+
+        <Label 
+            Grid.Column="1" Grid.Row="3"
+            Padding="5 0 0 0"
+            Margin="0 0 0 5"
+            FontSize="15"
+            Foreground="#8d8d93" x:FieldModifier="public" x:Name="label" Content="Tiempo transcurrido"/>
+        
+        <DataGrid 
+            CellStyle="{DynamicResource MaterialDataGridCellStyle}" 
+            ColumnHeaderStyle="{DynamicResource MaterialDataGridColumnHeaderStyle}" 
+            RowStyle="{DynamicResource MaterialDataGridRowStyle}" 
+            Style="{DynamicResource MaterialDataGridStyle}" 
+            HeadersVisibility="Column"
+            AutoGenerateColumns="False"
+            Grid.Column="1" Grid.Row="4"
+            Margin="0 0 0 15"
+            Name="datagrid_seccion" IsReadOnly="True">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn 
+                    Header="Nombre del Proceso" 
+                    Width="*" 
+                    Binding="{Binding NombreProceso}">
+                </DataGridTextColumn>
+                <DataGridTextColumn 
+                    Header="Nombre del programa" 
+                    Width="*" 
+                    Binding="{Binding NombrePrograma}">
+                </DataGridTextColumn>
+                <DataGridTextColumn 
+                    Header="Tiempo Trascurrido"  
+                    Width="*" 
+                    Binding="{Binding TiempoTotal}">
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+   
+        <StackPanel
+            Grid.Column="1" Grid.Row="5"
+            Orientation="Horizontal"
+            HorizontalAlignment="Right">
+            <Button 
+                x:Name="button1"
+                Height="36"
+                Width="200"
+                Foreground="White"
+                FontSize="17" 
+                Content="Pausar Sesion"
+                Style="{StaticResource MediumEnfasisButton}" Click="button1_Click"/>
+            
+            <Button 
+                x:Name="button"
+                Height="36"
+                Width="200"
+                Foreground="White"
+                FontSize="17" 
+                Margin="5 0 0 0"
+                Content="Finalizar Sesion" 
+                Click="button_Click"
+                Style="{StaticResource HighEnfasisButton}"/>
+        </StackPanel>
+        
+    </Grid>
+</Page>

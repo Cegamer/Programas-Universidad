@@ -1,0 +1,68 @@
+﻿<Page x:Class="AplicacionEficiencia.Vistas.Ajustes"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AplicacionEficiencia.Vistas"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Ajustes">
+
+    <Grid>
+        <!--#region Grid Definitions -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <!--#endregion-->
+
+        <TextBlock Text="Ajustes"
+                       Grid.Column="1" Grid.Row="1"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Foreground="White"
+                       FontSize="30"
+                       FontWeight="Bold"
+                       Name="nombre_perfil"
+                   Margin="0 0 0 16"/>
+
+
+        <StackPanel Orientation="Vertical"  Grid.Column="1" Grid.Row="2">
+            <TextBlock Text="Grida de Perfiles" Foreground="#8d8d93" FontSize="15" Margin="16 0 0 5"/>
+            <Border Background="#1c1c1e" CornerRadius="8" Padding="10 5">
+                <StackPanel>
+                    <RadioButton Content="Grande" 
+                             Name="rbtn_fsize_l"
+                             Foreground="White"
+                             FontSize="17"
+                             IsChecked="False"
+                             Style="{StaticResource TemaBotonMenu}"/>
+
+                    <RadioButton Content="Mediana" 
+                             Name="rbtn_fsize_m"
+                             Foreground="White"
+                             FontSize="17"
+                             IsChecked="False"
+                             Style="{StaticResource TemaBotonMenu}"/>
+
+                    <RadioButton Content="Pequeña" 
+                             Name="rbtn_fsize_s"
+                             Foreground="White"
+                             FontSize="17"
+                             IsChecked="True"
+                             Style="{StaticResource TemaBotonMenu}"/>
+                </StackPanel>
+            </Border>
+            <TextBlock Text="En este ajuste podrás modificar el tamaño de la rejilla de perfiles" Foreground="#8d8d93" FontSize="13" Margin="16 5 0 0"/>
+        </StackPanel>
+    </Grid>
+</Page>

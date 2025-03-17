@@ -1,0 +1,85 @@
+﻿<Window x:Class="AplicacionEficiencia.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AplicacionEficiencia"
+        mc:Ignorable="d"
+        ContentRendered="Window_ContentRendered"    
+        Title="MainWindow" Height="625" Width="1180">
+
+    <Grid Background="#1c1c1e">
+        <!--#region Grid Definitions -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*" MinWidth="300px"/>
+            <ColumnDefinition Width="80*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!--#endregion-->
+
+        <!--#region Navigation -->
+        <TextBlock Text="Monitor Master"
+                   
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Left"
+                   Foreground="White"
+                   FontSize="30"
+                   FontWeight="Bold"
+                   Grid.Row="1" Grid.Column="0"
+                   Margin="16, 0, 0, 10"/>
+
+        <StackPanel Grid.Row="2" Grid.Column="0">
+            <RadioButton Content="Sesion Actual"
+                         Name="rbtn_sesion_actual"
+                         Foreground="White"
+                         FontSize="17"
+                         Click="rbtn_sesion_actual_click"
+                         Visibility="Collapsed"
+                         Style="{StaticResource TemaBotonMenu}"/>
+
+            <Border Height="0.5" Background="#47474a" Margin="16 0 16 0" Name="separator_sesion_actual" Visibility="Collapsed"/>
+
+            <RadioButton Content="Perfiles" 
+                         Name="rbtn_perfiles"
+                         Foreground="White"
+                         FontSize="17"
+                         IsChecked="True"
+                         Click="rbtn_perfiles_click"
+                         Style="{StaticResource TemaBotonMenu}"/>
+
+            <RadioButton Content="Estadisticas" 
+                         Foreground="White"
+                         Name="rbtn_estadisticas"
+                         FontSize="17"
+                         Click="rbtn_estadisticas_click"
+                         Style="{StaticResource TemaBotonMenu}"/>
+
+            <RadioButton Content="Ajustes"
+                         Foreground="White"
+                         FontSize="17"
+                         Visibility="Collapsed"
+                         Click="rbtn_config_click"
+                         Style="{StaticResource TemaBotonMenu}"/>
+
+            <RadioButton Content="Informacion"
+                         Foreground="White"
+                         FontSize="17"
+                         Style="{StaticResource TemaBotonMenu}"
+                         Click="rbtn_informacion_click"/>
+        </StackPanel>
+        <!--#endregion-->
+
+        <Border 
+            Grid.Column="1" Grid.Row="0" Grid.RowSpan="3"
+            Background="#FF121212"
+            BorderBrush="#47474a" BorderThickness="1,0,0,0">
+            <Frame 
+                x:Name="frame" 
+                Content=""/>
+        </Border>
+    </Grid>
+</Window>
