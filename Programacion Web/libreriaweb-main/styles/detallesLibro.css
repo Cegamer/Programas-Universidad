@@ -1,0 +1,175 @@
+/* Estilo general */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #F9E0BB; /* Fondo claro */
+    color: #333;
+    margin: 0;
+    max-width: 100vw;
+
+  }
+  
+  /* Contenedor principal */
+  .container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    max-width: 100vw;
+
+
+  }
+  
+  /* Detalles del libro */
+  .book-details {
+    width: 60vw;
+    background: #FFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 80vw;
+
+  }
+  
+  /* Encabezado del libro */
+  .book-header {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Contenedor de la portada */
+  .cover-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFC26F;
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 250px;
+    max-height: 350px;
+  }
+  
+  #book-cover {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  .book-info {
+    flex: 2;
+  }
+  
+  .book-info h1 {
+    font-size: 1.8rem;
+    margin: 0 0 10px;
+    color: #884A39;
+  }
+  
+  .book-info p {
+    margin: 8px 0;
+    font-size: 1rem;
+  }
+  
+  .btn {
+    background-color: #884A39; /* Botón oscuro */
+    color: #FFF;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #C38154;
+  }
+  
+  /* Autor */
+  .author-details {
+    margin-top: 20px;
+  }
+  
+  .author-details h2 {
+    margin-bottom: 15px;
+    color: #C38154;
+  }
+  
+  .author-info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  #author-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #FFC26F;
+  }
+  
+  #author-description {
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  /* Carrito */
+  .cart {
+    width: 20vw;
+    background: #FFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .cart h2 {
+    margin: 0 0 10px;
+    font-size: 1.4rem;
+    color: #884A39;
+  }
+  
+  #cart-items {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 20px;
+  }
+  
+  #cart-items li {
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 0.9rem;
+  }
+  
+  #checkout-btn {
+    width: 100%;
+  }
+  #book-synopsis {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #555;
+  }
+  /* Estilos para la sección de reseñas */
+.reviews {
+  margin-top: 40px;
+}
+
+.add-review {
+  margin-top: 20px;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+button {
+  margin-top: 10px;
+}

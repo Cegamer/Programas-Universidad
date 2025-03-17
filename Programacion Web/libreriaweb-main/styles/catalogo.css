@@ -1,0 +1,269 @@
+/* styles/catalogo.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #F9E0BB;
+    justify-content: space-between;
+  
+    margin: 0;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    gap: 3vw;
+    flex-wrap: wrap;
+    max-width: 100vw;
+    padding: 2rem;
+    justify-content: center;
+}
+
+/* Estilos para los Filtros */
+.filters {
+    width: 15vw; /* Ajustado a un ancho menor */
+    height: 80vh; /* Altura fija */
+    background-color: #C38154;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Permite desplazamiento si el contenido excede la altura */
+}
+
+.filters h3 {
+    margin-bottom: 1.5rem;
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.filter-group {
+    margin-bottom: 1.5rem;
+}
+
+.filter-group label {
+    color: #884A39;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+.filters div{display: flex;flex-direction: column; width: 90%;}
+select, input[type="date"], input[type="range"] {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #FFC26F;
+    font-size: 1rem;
+    color: #884A39;
+}
+
+select:focus, input[type="date"]:focus, input[type="range"]:focus {
+    outline: none;
+    border: 2px solid #884A39;
+}
+
+.date-filters {
+
+    display: flex;
+    justify-content: space-between;
+    gap: 1vw;
+}
+
+.date-filters input {
+    width: 48%;
+}
+
+.price-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#precio-value {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #884A39;
+}
+
+/* Estilos mejorados para el input de tipo range */
+input[type="range"] {
+    background-color: #FFF;
+    height: 0.5rem;
+    border-radius: 0.25rem; /* Redondeado más sutil */
+    width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
+    -webkit-appearance: none; /* Elimina el estilo predeterminado del navegador */
+    appearance: none; /* Elimina el estilo predeterminado del navegador */
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background-color: #C38154; /* Color del recorrido */
+    border-radius: 0.25rem;
+    height: 0.5rem;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    background-color: #884A39; /* Color del pulgar */
+    border-radius: 50%;
+    width: 1.5rem; /* Un poco más grande para que sea más fácil de usar */
+    height: 1.5rem; /* Consistente con el ancho */
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+    transition: background-color 0.3s ease-in-out; /* Transición suave al hacer hover */
+}
+
+/* Estilo para el pulgar del slider al hacer hover */
+input[type="range"]::-webkit-slider-thumb:hover {
+    background-color: #FFC26F; /* Color al pasar el mouse */
+}
+
+input[type="range"]:focus {
+    outline: none; /* Elimina el contorno predeterminado */
+    border: 2px solid #884A39; /* Contorno personalizado al enfocar */
+}
+
+input[type="range"]::-moz-range-track {
+    background-color: #C38154; /* Color del recorrido en Firefox */
+    border-radius: 0.25rem;
+    height: 0.5rem;
+}
+
+input[type="range"]::-moz-range-thumb {
+    background-color: #884A39; /* Color del pulgar en Firefox */
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+input[type="range"]::-ms-track {
+    background-color: #C38154; /* Color del recorrido en Edge */
+    border-radius: 0.25rem;
+    height: 0.5rem;
+    border-color: transparent;
+    border-width: 0;
+    color: transparent;
+    background: transparent;
+}
+
+input[type="range"]::-ms-thumb {
+    background-color: #884A39; /* Color del pulgar en Edge */
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+
+/* Mejoras generales en los filtros */
+.filters div {
+    margin-bottom: 1.2rem;
+}
+
+/* Estilos generales de los libros */
+.books {
+    flex-wrap: wrap;
+    width: 45vw;
+}
+
+.book-item {
+    width: 40vw;
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    background-color: #FFF;
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+    box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+}
+
+.book-item img {
+    max-height: 15rem;
+    width: auto;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.book-item div {
+    flex: 1;
+}
+
+/* Estilos para el carrito */
+.cart {
+    width: 20vw;
+    background-color: #FFC26F;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.cart h3 {
+    margin-bottom: 1.5rem;
+    color: #884A39;
+    font-size: 1.5rem;
+}
+
+#cart-items {
+    list-style-type: none;
+    padding: 0;
+}
+
+#cart-items li {
+    margin-bottom: 1rem;
+}
+
+/* Estilos de botones */
+button {
+    background-color: #884A39;
+    color: white;
+    padding: 1rem;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #C38154;
+}
+
+/* Contenedor de imágenes */
+.image-container {
+    height: 30vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+/* Responsividad */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .filters, .cart {
+        width: 90%;
+        max-width: 90%;
+        margin-bottom: 2rem;
+    }
+
+    .books {
+        width: 90%;
+    }
+
+    .filters {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+.details-button{ margin-top: 10px; background-color: #f7410f;}
+.info-container{width: 40vw;}

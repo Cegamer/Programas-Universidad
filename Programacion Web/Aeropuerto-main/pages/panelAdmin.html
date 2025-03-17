@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administrador</title>
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/panelAdmin.css">
+    <script src="../scripts/common.js"></script>
+    <script src="../scripts/panelAdmin.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Panel de Administrador</h1>
+        <nav>
+            <button id="btn-home">Inicio</button>
+            <button id="btn-logout">Cerrar sesión</button>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Reservas de Vuelos</h2>
+            <table id="tabla-reservas" class="table">
+                <thead>
+                    <tr>
+                        <th>ID Reserva</th>
+                        <th>ID Vuelo</th>
+                        <th>ID Usuario</th>
+                        <th>Tipo Asiento</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpo-tabla-reservas"></tbody>
+            </table>
+        </section>
+        <section>
+            <h2>Vuelos</h2>
+            <table id="tabla-vuelos" class="table">
+                <thead>
+                    <tr>
+                        <th>ID Vuelo</th>
+                        <th>Origen</th>
+                        <th>Destino</th>
+                        <th>Hora Salida</th>
+                        <th>Hora Llegada</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpo-tabla-vuelos"></tbody>
+            </table>
+        </section>
+        <section>
+            <h2>Usuarios</h2>
+            <table id="tabla-usuarios" class="table">
+                <thead>
+                    <tr>
+                        <th>ID Usuario</th>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Tipo de Usuario</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpo-tabla-usuarios"></tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

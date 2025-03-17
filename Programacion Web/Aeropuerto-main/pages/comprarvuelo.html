@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprar Vuelo</title>
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/comprarvuelo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="../scripts/common.js"></script>
+    <script src="../scripts/comprarvuelo.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Aeropuerto Internacional</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="consultavuelos.html">Consulta de Vuelos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="perfil.html">Mi Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="reporteincidencias.html">Reporte de Incidencias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="reservarestacionamiento.html">Reservar Estacionamiento</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Información del Vuelo</h2>
+        <div id="info-vuelo"></div>
+
+        <h2>Selección de Asientos</h2>
+        <div id="asientos-container"></div>
+
+        <div id="formulario-pago" style="display: none;">
+            <h3>Información de Pago</h3>
+            <form id="pago-form">
+                <input type="text" id="nombre-tarjeta" placeholder="Nombre en la Tarjeta" required>
+                <input type="number" id="numero-tarjeta" placeholder="Número de Tarjeta" required>
+                <input type="text" id="fecha-expiracion" placeholder="Fecha de Expiración (MM/AA)" required>
+                <input type="text" id="cvv" placeholder="CVV" required>
+                <button type="submit">Comprar Ahora</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

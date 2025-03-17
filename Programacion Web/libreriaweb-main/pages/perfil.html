@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/perfil.css">
+</head>
+<body>
+    <header id="header">
+        <!-- Header dinámico cargado desde archivo común -->
+    </header>
+    
+    <main class="container">
+        <h1>Mi Perfil</h1>
+
+        <!-- Datos del usuario -->
+        <div id="usuario-info">
+            <h2>Datos del Usuario</h2>
+            <p><strong>Username:</strong> <span id="username"></span></p>
+            <p><strong>Email:</strong> <span id="correo"></span></p>
+            <button id="modificar-username">Modificar Username</button>
+            <button id="modificar-password">Modificar Contraseña</button>
+            <button id="eliminar-cuenta">Eliminar Cuenta</button>
+        </div>
+
+        <!-- Historial de compras -->
+        <div id="historial-compras">
+            <h2>Historial de Compras</h2>
+            <ul id="compras-lista"></ul>
+        </div>
+    </main>
+
+    <!-- Modal para modificar username -->
+    <div id="modal-username" class="modal">
+        <div class="modal-content">
+            <h3>Modificar Username</h3>
+            <input type="text" id="nuevo-username" placeholder="Nuevo Username">
+            <button id="guardar-username">Guardar</button>
+            <button id="cerrar-modal-username">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- Modal para modificar contraseña -->
+    <div id="modal-password" class="modal">
+        <div class="modal-content">
+            <h3>Modificar Contraseña</h3>
+            <input type="password" id="nueva-password" placeholder="Nueva Contraseña">
+            <button id="guardar-password">Guardar</button>
+            <button id="cerrar-modal-password">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- Modal de confirmación para eliminar cuenta -->
+    <div id="modal-eliminar" class="modal">
+        <div class="modal-content">
+            <h3>¿Estás seguro de que deseas eliminar tu cuenta?</h3>
+            <button id="confirmar-eliminar">Confirmar</button>
+            <button id="cancelar-eliminar">Cancelar</button>
+        </div>
+    </div>
+
+    <script src="../scripts/common.js"></script>
+    <script src="../scripts/perfil.js"></script>
+</body>
+</html>

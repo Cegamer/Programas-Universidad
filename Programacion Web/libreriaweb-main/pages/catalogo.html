@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Libros</title>
+  <link rel="stylesheet" href="../styles/catalogo.css">
+  <link rel="stylesheet" href="../styles/header.css">
+
+  <script src="../scripts/common.js"></script>
+</head>
+<body>
+  <header id="header"></header>
+
+  <div class="container">
+    <div class="filters">
+      <h3>Filtros</h3>
+      <div>
+        <label for="autor-filter">Autor:</label>
+        <select id="autor-filter">
+          <option value="">Selecciona un autor</option>
+        </select>
+      </div>
+      <div>
+        <label for="categoria-filter">Categoría:</label>
+        <select id="categoria-filter">
+          <option value="">Selecciona una categoría</option>
+        </select>
+      </div>
+      <div>
+        <label for="fecha-filter">Fecha de Publicación:</label>
+        <input type="date" id="fecha-filter-min" placeholder="Desde">
+        <input type="date" id="fecha-filter-max" placeholder="Hasta">
+      </div>
+      <div>
+        <label for="precio-filter">Precio Máximo:</label>
+        <input type="range" id="precio-filter" min="0" max="50" value="50">
+        <span id="precio-value">50</span>
+      </div>
+    </div>
+
+    <div class="books">
+      <h3>Libros Disponibles</h3>
+      <div id="books-list"></div>
+    </div>
+
+    <div class="cart">
+      <h3>Carrito de Compras</h3>
+      <ul id="cart-items"></ul>
+      <button id="checkout-btn">Finalizar Compra</button>
+    </div>
+  </div>
+
+  <script src="../scripts/catalogo.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio de Sesión y Registro</title>
+  <link rel="stylesheet" href="../styles/login.css">
+</head>
+<body>
+  <div class="container">
+    <div class="image-section">
+      <img src="../resources/images/librosss.jpg" alt="Imagen de bienvenida">
+    </div>
+    <div class="form-section">
+      <div class="form-header">
+        <h2 id="form-title">Inicia Sesión</h2>
+        <button id="toggle-btn">¿No tienes cuenta? Regístrate</button>
+      </div>
+      <!-- Formulario de Inicio de Sesión -->
+      <form id="login-form" class="form">
+        <input type="text" id="login-username" name="username" placeholder="Nombre de usuario" required>
+        <input type="password" id="login-password" name="password" placeholder="Contraseña" required>
+        <button type="submit">Iniciar Sesión</button>
+      </form>
+      <!-- Formulario de Registro -->
+      <form id="register-form" class="form hidden">
+        <input type="text" id="reg-username" name="username" placeholder="Nombre de usuario" required>
+        <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+        <input type="password" id="reg-password" name="password" placeholder="Contraseña" required>
+        <button type="submit">Registrarse</button>
+      </form>
+    </div>
+  </div>
+  <script src="../scripts/common.js"></script>
+  <script src="../scripts/login.js"></script>
+</body>
+</html>

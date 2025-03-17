@@ -1,0 +1,221 @@
+/* Estilo general de la página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F9E0BB;
+}
+
+/* Contenedor principal del panel de administración */
+.dashboard-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Título principal */
+h1 {
+    font-size: 2rem;
+    color: #884A39;
+    margin-bottom: 20px;
+}
+
+/* Estilo para las secciones del panel */
+.dashboard-section {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+/* Títulos de las secciones */
+.dashboard-section h2 {
+    font-size: 1.5rem;
+    color: #884A39;
+    margin-bottom: 15px;
+}
+
+/* Estilo para los botones */
+button {
+    background-color: #C38154;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #FFC26F;
+}
+
+/* Tabla para la gestión de libros */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #C38154;
+    color: white;
+}
+
+/* Estilo para las acciones dentro de la tabla */
+table td .accion-btn {
+    background-color: #F9E0BB;
+    color: #884A39;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+table td .accion-btn:hover {
+    background-color: #FFC26F;
+}
+
+/* Sección de estadísticas */
+.stats {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stat-item {
+    flex: 1;
+    background-color: #FFF;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+}
+
+.stat-item h4 {
+    font-size: 1.2rem;
+    color: #884A39;
+    margin-bottom: 10px;
+}
+
+.stat-item p {
+    font-size: 1.5rem;
+    color: #C38154;
+}
+
+/* Estilo para los modales */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #FFF;
+    padding: 30px;
+    border-radius: 8px;
+    width: 500px;
+    height: 70vh;
+    overflow: scroll;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h3 {
+    font-size: 1.5rem;
+    color: #884A39;
+    margin-bottom: 20px;
+}
+
+/* Estilo para los formularios dentro de los modales */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: #884A39;
+}
+
+input, select, textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    width: 100%;
+}
+
+input[type="checkbox"] {
+    width: auto;
+}
+
+textarea {
+    height: 100px;
+}
+
+/* Estilo para los botones dentro del modal */
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+#guardar-libro, #cerrar-modal {
+    width: 48%;
+}
+
+#guardar-libro {
+    background-color: #C38154;
+}
+
+#guardar-libro:hover {
+    background-color: #FFC26F;
+}
+
+#cerrar-modal {
+    background-color: #F9E0BB;
+}
+
+#cerrar-modal:hover {
+    background-color: #FFC26F;
+}
+
+/* Estilo para los selectores de autor y categoría */
+select {
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+
+}
+
+
+/* Agregar algunos márgenes */
+.modal-content, .dashboard-section {
+    margin-bottom: 20px;
+}
+#libros-mas-vendidos {
+    list-style-type: none;
+    padding: 0;
+}
+
+#libros-mas-vendidos li {
+    margin: 5px 0;
+    font-size: 16px;
+}

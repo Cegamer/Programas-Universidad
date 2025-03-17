@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/inicio.css">
+</head>
+<body>
+    <header id="header">
+        <!-- Header dinámico cargado desde archivo común -->
+    </header>
+
+    <main class="container">
+        <h1>Bienvenido a Librería</h1>
+
+        <!-- Sección de búsqueda -->
+        <section id="buscador">
+            <h2>Busca tu próximo libro</h2>
+            <form id="form-busqueda">
+                <input type="text" id="titulo" placeholder="Título">
+                <input type="text" id="autor" placeholder="Autor">
+                <select id="categoria">
+                    <option value="">Categoría</option>
+                    <option value="ficcion">Ficción</option>
+                    <option value="historia">Historia</option>
+                    <option value="ciencia">Ciencia</option>
+                </select>
+                <input type="number" id="precio-min" placeholder="Precio mínimo">
+                <input type="number" id="precio-max" placeholder="Precio máximo">
+                <button type="submit">Buscar</button>
+            </form>
+        </section>
+
+        <!-- Libros destacados -->
+        <section id="destacados">
+            <h2>Libros Destacados</h2>
+            <div class="grid" id="libros-destacados"></div>
+        </section>
+
+        <!-- Nuevas publicaciones -->
+        <section id="nuevas-publicaciones">
+            <h2>Nuevas Publicaciones</h2>
+            <div class="grid" id="nuevos-libros"></div>
+        </section>
+
+        <!-- Recomendaciones personalizadas -->
+        <section id="recomendaciones">
+            <h2>Recomendaciones para Ti</h2>
+            <div class="grid" id="libros-recomendados"></div>
+        </section>
+    </main>
+
+    <script src="../scripts/common.js"></script>
+    <script src="../scripts/inicio.js"></script>
+</body>
+</html>

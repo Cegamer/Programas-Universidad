@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito de Compras</title>
+  <link rel="stylesheet" href="../styles/header.css">
+  <link rel="stylesheet" href="../styles/carrito.css">
+</head>
+<body>
+  <header id="header"></header>
+
+  <main id="main">
+    <h1>Carrito de Compras</h1>
+
+    <!-- Fase 1: Mostrar carrito y selección de tipo -->
+    <section id="cart-phase">
+      <h2>Productos en tu carrito</h2>
+      <div id="cart-items" class="cart-items-container"></div>
+      <div id="select-type">
+        <h3>Selecciona el tipo de productos</h3>
+        <button id="virtual">Productos Virtuales</button>
+        <button id="physical">Productos Físicos</button>
+      </div>
+    </section>
+
+    <!-- Fase 2: Datos de la tarjeta -->
+    <section id="card-info" class="phase" style="display:none;">
+      <h2><img src="../resources/images/card-icon.png" alt="Tarjeta de Crédito"> Ingresa los datos de tu tarjeta</h2>
+      <form id="card-form">
+        <input type="text" id="card-number" placeholder="Número de tarjeta" required>
+        <div class="date-inputs">
+          <input type="text" id="card-expiry-month" placeholder="MM" maxlength="2" required>
+          <input type="text" id="card-expiry-year" placeholder="AA" maxlength="2" required>
+        </div>
+        <input type="text" id="card-cvc" placeholder="CVC" required>
+        <button type="submit">Continuar</button>
+      </form>
+    </section>
+
+    <!-- Fase 3: Dirección de envío -->
+    <section id="shipping-address" class="phase" style="display:none;">
+      <h2>Ingresa tu dirección</h2>
+      <form id="address-form">
+        <input type="text" id="address-line1" placeholder="Dirección 1" required>
+        <input type="text" id="address-line2" placeholder="Dirección 2 (opcional)">
+        <input type="text" id="city" placeholder="Ciudad" required>
+        <input type="text" id="postal-code" placeholder="Código postal" required>
+        <button type="submit">Continuar</button>
+      </form>
+    </section>
+
+    <!-- Fase 4: Confirmación de pago -->
+    <section id="payment-confirmation" class="phase" style="display:none;">
+      <h2>Confirmación de Pago</h2>
+      <p>El proceso de pago ha sido exitoso. ¡Gracias por tu compra!</p>
+      <button id="finish-purchase">Finalizar compra</button>
+    </section>
+  </main>
+
+  <script src="../scripts/common.js"></script>
+  <script src="../scripts/carrito.js"></script>
+</body>
+</html>

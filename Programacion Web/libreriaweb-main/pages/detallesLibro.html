@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalles del Libro</title>
+    <link rel="stylesheet" href="../styles/detallesLibro.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <script src="../scripts/common.js"></script>
+  </head>
+  <body>
+    <header id="header"></header>
+
+    <div class="container">
+      <!-- Sección de detalles del libro -->
+      <div class="book-details">
+        <div class="book-header">
+          <div class="cover-container">
+            <img id="book-cover" src="" alt="Portada del libro" />
+          </div>
+          <div class="book-info">
+            <h1 id="book-title">Título del libro</h1>
+            <p>
+              <strong>Autor:</strong>
+              <span id="book-author">Nombre del autor</span>
+            </p>
+            <p>
+              <strong>Categoría:</strong>
+              <span id="book-category">Categoría</span>
+            </p>
+            <p><strong>Precio:</strong> $<span id="book-price">0</span></p>
+            <p>
+              <strong>Fecha de publicación:</strong>
+              <span id="book-date">Fecha</span>
+            </p>
+            <h3>Sinopsis</h3>
+            <p id="book-synopsis"></p>
+            <!-- Contenedor para la sinopsis -->
+
+            <button id="add-to-cart" class="btn">Agregar al carrito</button>
+          </div>
+        </div>
+        <div class="author-details">
+          <h2>Acerca del Autor</h2>
+          <div class="author-info">
+            <img id="author-photo" src="" alt="Foto del autor" />
+            <p id="author-description">Descripción del autor</p>
+          </div>
+        </div>
+        <!-- Sección de Reseñas -->
+        <div class="reviews">
+          <h2>Reseñas</h2>
+          <div id="reviews-list"></div>
+          <!-- Aquí se cargarán las reseñas existentes -->
+
+          <!-- Formulario para agregar una nueva reseña -->
+          <div class="add-review">
+            <h3>Escribe tu reseña</h3>
+            <textarea
+              id="review-text"
+              placeholder="Escribe tu reseña aquí..."
+              rows="4"
+            ></textarea>
+            <button id="submit-review" class="btn">Enviar Reseña</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sección del carrito -->
+      <div class="cart">
+        <h2>Carrito de Compras</h2>
+        <ul id="cart-items"></ul>
+        <button id="checkout-btn" class="btn">Finalizar Compra</button>
+      </div>
+    </div>
+
+    <script src="../scripts/detallesLibro.js"></script>
+  </body>
+</html>
